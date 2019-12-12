@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android" >
     <name>VacunAr</name>
     <description>
         Llevá tu libreta de vacunación siempre con vos.
@@ -28,5 +28,6 @@
     <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
     <plugin name="cordova-plugin-console" spec="~1.0.1" />
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
+    <plugin name="cordova-plugin-geolocation" spec="2.4.3" />
     <icon src="www/img/icono.png" />
 </widget>
