@@ -304,7 +304,7 @@ function crearDin(w, x, y, z){
 function enviarme(){
   var usermail = sessionStorage.getItem("usermail");
   var enviar= document.getElementById('enviarme');
-  enviar.setAttribute("href", "mailto:"+ usermail +"?Subject=Mis%20Vacunas&body=Primeras%20horas%0D%0A"+nombre+"%0D%0A"+fecha+"%20"+lugar);
+  enviar.setAttribute("href", "mailto:"+ usermail +"?Subject=Mis%20Vacunas");
 }
 
   function VolcarDatos(x, y) {
@@ -320,8 +320,6 @@ function enviarme(){
                 var fecha = objeto.fecha;
                 var nombre = objeto.nombre;
                 crearDin(nombre, y, lugar, fecha);
-                enviarme();
-                
             });
         })
         .catch(function(error) {
