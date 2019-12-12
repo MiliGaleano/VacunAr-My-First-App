@@ -52,7 +52,11 @@ function onDeviceReady() {
 }
 
 
-
+function enviarme(){
+  var usermail = sessionStorage.getItem("usermail");
+  var enviar= document.getElementById('enviarme');
+  enviar.setAttribute("href", "mailto:"+ usermail +"?Subject=Mis%20Vacunas");
+}
 
 
 function toggleSignIn() {

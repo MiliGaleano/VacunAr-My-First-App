@@ -33,7 +33,15 @@
                                    </div>
                               </div>   
                         <a class="nav-item nav-link active" href="#" id="calend">Mis vacunas</a>
-                        <i class="nav-item nav-link fas fa-share-alt" id="pdfGuardar"></i>
+                        <div class="dropdown">
+                          <a class="btn btn-secondary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="nav-item nav-link fas fa-share-alt" onclick="enviarme()"></i>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" target="_top" id="enviarme">Enviar a mail</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" id="pdfGuardar">Guardar pdf</a>
+                         </div>
+                    </div>   
                     </div>
                 </nav>
     </header>
