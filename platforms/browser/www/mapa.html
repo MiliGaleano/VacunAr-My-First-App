@@ -7,19 +7,20 @@
     <!-- iconos fontawesome -->
     <script src="https://kit.fontawesome.com/675f0b7167.js" crossorigin="anonymous"></script>
     <!-- bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--mapas-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />  
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+    <meta name="viewport" content="initial-scale=1.0,
+    width=device-width" />
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+    type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+    type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"
+     type="text/javascript" charset="utf-8"></script>
     <!--estilos-->
     <link rel="stylesheet" href="style.css">
     <title>Mapa</title>
@@ -32,8 +33,8 @@
                                         <a class="btn btn-secondary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-bars"></i></a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                      <a class="dropdown-item" href="#">Maria Luz</a>
-                                      <a class="dropdown-item" href="#">Joaquín</a>
+                                      <a class="dropdown-item" href="#" id="nombreUsuario">Maria Luz</a>
+                                      <a class="dropdown-item" href="login.html" onclick="cerrarSesion()">Cerrar sesión</a>
                                       <div class="dropdown-divider"></div>
                                       <a class="dropdown-item" href="#">Consultas</a>
                                       <div class="dropdown-divider"></div>
@@ -46,27 +47,8 @@
                     </nav>
         </header>
 
-        <div class="page-header">
-                        <h1>Map at a specified location</h1>
-                        <p>Display a map at a specified location and zoom level</p>
-                    </div>
-                    <p>This example displays a movable map initially centered on the <b>Brandenburg Gate</b> in the centre of Berlin <i>(52.5159°N, 13.3777°E)</i></p>
-                    <div id="map"></div>
-                    <h3>Code</h3>
-                    <p>
-                        The <code>map.setCenter()</code> method and <code>map.setZoom() </code>method are able to control the location of the map.<br>
-                    </p>
-                
+        <div id="mapContainer"></div>
                
-
-
-<!--                
-                <div id="mapa">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3285.3584026205485!2d-58.436736018307855!3d-34.569796830469045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1574792667430!5m2!1ses-419!2sar" width="100%" height="500" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-                </div> -->
-
-
-
 
         <footer>
             <nav class="navbar fixed-bottom navbar-expand navbar-light bg-light" id="hola">

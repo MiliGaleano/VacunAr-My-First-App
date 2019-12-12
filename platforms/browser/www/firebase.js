@@ -4,7 +4,7 @@
     authDomain: "vacunar-b55e8.firebaseapp.com",
     databaseURL: "https://vacunar-b55e8.firebaseio.com",
     projectId: "vacunar-b55e8",
-    storageBucket: "vacunar-b55e8.appspot.com",
+    storageBucket: "gs://vacunar-b55e8.appspot.com/",
     messagingSenderId: "342518552509",
     appId: "1:342518552509:web:ac0c6545e19f18011ae4d4",
     measurementId: "G-3STLYV5VL2"
@@ -14,6 +14,192 @@
   firebase.analytics();
 
   var db = firebase.firestore();
+
+  
+  document.addEventListener("deviceready", onDeviceReady, false);
+  function onDeviceReady() {
+      console.log('hola' + navigator.camera);
+  }
+
+  document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    console.log(cordova.file);
+}
+
+
+
+
+
+function toggleSignIn() {
+  if (firebase.auth().currentUser) {
+    // [START signout]
+    
+    firebase.auth().signOut();
+    
+    // [END signout]
+  } else {
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    if (email.length < 4) {
+      alert('Ingrese un email válido');
+      return;
+    }
+    if (password.length < 4) {
+      alert('Ingrese una contraseña válida');
+      return;
+    }
+    // Sign in with email and pass.
+    // [START authwithemail]
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // [START_EXCLUDE]
+      if (errorCode === 'auth/wrong-password') {
+        alert('Contraseña incorrecta');
+      } else {
+        alert(errorMessage);
+      }
+      console.log(error);
+      document.getElementById('quickstart-sign-in').disabled = false;
+      // [END_EXCLUDE]
+    });
+    // [END authwithemail]
+  }
+  document.getElementById('quickstart-sign-in').disabled = true;
+}
+/**
+ * Handles the sign up button press.
+ */
+function handleSignUp() {
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  if (email.length < 4) {
+    alert('Ingrese un email válido');
+    return;
+  }
+  if (password.length < 4) {
+    alert('Ingrese una contraseña válida');
+    return;
+  }
+  // Sign in with email and pass.
+  // [START createwithemail]
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // [START_EXCLUDE]
+    if (errorCode == 'auth/weak-password') {
+      alert('La contraseña es poco segura');
+    } else {
+      alert(errorMessage);
+    }
+    console.log(error);
+    // [END_EXCLUDE]
+  });
+  // [END createwithemail]
+}
+/**
+ * Sends an email verification to the user.
+ */
+function sendEmailVerification() {
+  // [START sendemailverification]
+  firebase.auth().currentUser.sendEmailVerification().then(function() {
+    // Email Verification sent!
+    // [START_EXCLUDE]
+    alert('Email de verificación enviado');
+    // [END_EXCLUDE]
+  });
+  // [END sendemailverification]
+}
+function sendPasswordReset() {
+  var email = document.getElementById('email').value;
+  // [START sendpasswordemail]
+  firebase.auth().sendPasswordResetEmail(email).then(function() {
+    // Password Reset Email Sent!
+    // [START_EXCLUDE]
+    alert('Email de cambio de contraseña enviado');
+    // [END_EXCLUDE]
+  }).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // [START_EXCLUDE]
+    if (errorCode == 'auth/invalid-email') {
+      alert(errorMessage);
+    } else if (errorCode == 'auth/user-not-found') {
+      alert(errorMessage);
+    }
+    console.log(error);
+    // [END_EXCLUDE]
+  });
+  // [END sendpasswordemail];
+}
+/**
+ * initApp handles setting up UI event listeners and registering Firebase auth listeners:
+ *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
+ *    out, and that is where we update the UI.
+ */
+function initApp() {
+  // Listening for auth state changes.
+  // [START authstatelistener]
+  firebase.auth().onAuthStateChanged(function(user) {
+    // [START_EXCLUDE silent]
+    document.getElementById('quickstart-verify-email').disabled = true;
+    // [END_EXCLUDE]
+    if (user) {
+        location.assign('index.html');
+      // User is signed in.
+      var displayName = user.displayName;
+      var email = user.email;
+      var emailVerified = user.emailVerified;
+      var photoURL = user.photoURL;
+      var isAnonymous = user.isAnonymous;
+      var uid = user.uid;
+      var providerData = user.providerData;
+      // [START_EXCLUDE]
+      //document.getElementById('quickstart-sign-in-status').textContent = 'Conectado';
+      document.getElementById('quickstart-sign-in').textContent = 'Desconectarse';
+      //document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+      if (!emailVerified) {
+        document.getElementById('quickstart-verify-email').disabled = false;
+      }
+      // [END_EXCLUDE]
+    } else {
+      // User is signed out.
+      // [START_EXCLUDE]
+      //document.getElementById('quickstart-sign-in-status').textContent = 'Desconectado';
+      document.getElementById('quickstart-sign-in').textContent = 'Conectarse';
+      //document.getElementById('quickstart-account-details').textContent = 'null';
+      // [END_EXCLUDE]
+    }
+    // [START_EXCLUDE silent]
+    document.getElementById('quickstart-sign-in').disabled = false;
+    // [END_EXCLUDE]
+  });
+  // [END authstatelistener]
+  document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
+  document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
+  document.getElementById('quickstart-verify-email').addEventListener('click', sendEmailVerification, false);
+  document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
+}
+window.onload = function() {
+  initApp();
+};
+
+function cerrarSesion(){
+  firebase.auth().signOut();
+  }
+
+
+
+
+
+
+
+
+
+
 
 //   var vacunaID = document.getElementById("nombrevacuna")
 //   var fechaBCG1 = document.getElementById("fechaBCG1")
@@ -35,21 +221,230 @@
 //        })
 //   }
 
+//CREAR USUARIO
+// el on click para que entre a la camara
+// $("#subirFoto").on("click", function () {
+//   navigator.camera.getPicture(onSuccess, onFail, {
+//       quality: 50,
+//       destinationType: Camera.DestinationType.DATA_URL
+//   });
+// });
+// function onSuccess(imageData) {
+//   // creamos un id aleatorio de 25 caracteres, super robado de internet xd
+//   function idRandom() {
+//       var result           = '';
+//       var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+//       var charactersLength = characters.length;
+//       for ( var i = 0; i < 25; i++ ) {
+//          result += characters.charAt(Math.floor(Math.random() * charactersLength));
+//       }
+//       return result;
+//    }
+//   // le asignamos un numero random y le concatenamos el .jpg
+//   var nomArchivo = idRandom() + ".jpg";
+//   // Hacemos una referencia al storage de firebase
+//   var storageRef = firebase.storage().ref();
+//   // la referencia al directorio y al nombre del archivo que generamos recien
+//   var ref = storageRef.child('images/' + nomArchivo);
+//   ref.putString(imageData, 'base64').then(function (snapshot) {
+//       console.log('Uploaded a base64 string!');
+//   });
+// }
+// // la funcion de error
+// function onFail(message) {
+//   alert('Failed because: ' + message);
+// }
 
+
+
+//asjdbiaskjdbaslfknasjnlfd
+
+// var pictureSource;   // picture source
+//     var destinationType; // sets the format of returned value
+
+//     // Wait for device API libraries to load
+//     //
+//     document.addEventListener("deviceready",onDeviceReady,false);
+
+//     // device APIs are available
+//     //
+//     function onDeviceReady() {
+//         pictureSource=navigator.camera.PictureSourceType;
+//         destinationType=navigator.camera.DestinationType;
+//     }
+
+//     // Called when a photo is successfully retrieved
+//     //
+//     function onPhotoDataSuccess(imageData) {
+//       // Uncomment to view the base64-encoded image data
+//        console.log(imageData);
+
+//       // Get image handle
+//       //
+//       var smallImage = document.getElementById('smallImage');
+
+//       // Unhide image elements
+//       //
+//       smallImage.style.display = 'block';
+
+//       // Show the captured photo
+//       // The inline CSS rules are used to resize the image
+//       //
+//       smallImage.src = "data:image/jpeg;base64," + imageData;
+//     }
+
+//     // Called when a photo is successfully retrieved
+//     //
+//     function onPhotoURISuccess(imageURI) {
+//       // Uncomment to view the image file URI
+//       console.log(imageURI);
+
+//       // Get image handle
+//       //
+//       var largeImage = document.getElementById('largeImage');
+
+//       // Unhide image elements
+//       //
+//       largeImage.style.display = 'block';
+
+//       // Show the captured photo
+//       // The inline CSS rules are used to resize the image
+//       //
+//       largeImage.src = imageURI;
+//     }
+
+//     // A button will call this function
+//     //
+//     function capturePhoto() {
+//       // Take picture using device camera and retrieve image as base64-encoded string
+//       navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+//         destinationType: destinationType.DATA_URL });
+//     }
+
+//     // A button will call this function
+//     //
+//     function capturePhotoEdit() {
+//       // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
+//       navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
+//         destinationType: destinationType.DATA_URL });
+//     }
+
+//     // A button will call this function
+//     //
+//     function getPhoto(source) {
+//       // Retrieve image file location from specified source
+//       navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+//         destinationType: destinationType.FILE_URI,
+//         sourceType: source });
+//     }
+
+//     // Called if something bad happens.
+//     //
+//     function onFail(message) {
+//       alert('Failed because: ' + message);
+//     }
+
+//SUBIR IMAGENES AL STORAGE
+
+//OBTENER ELEMENTOS
+// var uploader = document.getElementById('uploader');
+// var fileButton = document.getElementById('fileButton');
+
+// //ESCUCHAR SELECCION DE ARCHIVO
+// fileButton.addEventListener('change', function(e) {
+
+//   //OBTENER ARCHIVO
+//   var file = e.target.files[0];
+
+//   //CREAR CARPETA STORAGE
+//   var storageRef = firebase.storage().ref('fotos/' + file.name);
+
+//   //SUBIR ARCHIVO
+//   var task = storageRef.put(file);
+
+//   //BARRITA PROGRESO
+//   task.on('state_changed',
+  
+//   function progress(snapshot) {
+//     var percentage = (snapshot.bytesTransferred / 
+//       snapshot.totalBytes) * 100;
+//       uploader.value = percentage;
+//   },
+
+//   function error(err) {
+//   },
+
+//   function complete(){
+//   }
+
+//   );
+// });
+
+
+
+//ANDA HERMOSO
+//FUNCIÓN PARA GUARDAR EL REGISTRO DE VACUNAS EN BASE DE DATOS
+//var coleccion = document.getElementById('nombreUsuario').value;
+// var nombre = document.getElementsByTagName('li');
+// var inputs = document.getElementsByTagName('input');
+// var label = document.getElementsByTagName('label');
+// var div = document.getElementsByTagName('div');
+
+// function traerDatos(w,x,y,z){
+//     //label[2].style.display = "none";
+//     w.display = "none";
+
+//     var data = {
+//         nombre: z,
+//         fecha: x,
+//         lugar: y,
+//     }
+//     db.collection('usuarios').doc(z).set(data)
+//     .then(function(docRef) {
+//      console.log("OK! " + z);
+//      }).catch(function(error) {
+//      console.log("Error: " + error);
+//      })
+// }
+
+
+//COLECCION USUARIOS
+var mail = document.getElementById('mailUs');
+var nombreUs = document.getElementById('nombreUsuario');
+var fechaNac = document.getElementById('fechaNac');
+
+function traerDatos2(){
+    //label[2].style.display = "none";
+    //w.display = "none";
+
+    var dataUs = {
+        nombre: nombreUs.value,
+        fechaNac: fechaNac.value,
+    }
+    db.collection('usuarios').doc(mail.value).set(dataUs)
+    .then(function(docRef) {
+     console.log("OK! " + mail.value);
+     }).catch(function(error) {
+     console.log("Error: " + error);
+     })
+}
+
+//COLECCION VACUNAS
 var nombre = document.getElementsByTagName('li');
 var inputs = document.getElementsByTagName('input');
 var label = document.getElementsByTagName('label');
-//var div = document.getElementsByTagName('div');
+var div = document.getElementsByTagName('div');
 
 function traerDatos(w,x,y,z){
     //label[2].style.display = "none";
     w.display = "none";
 
-    var data = {
+    var dataVac = {
+        nombre: z,
         fecha: x,
         lugar: y,
     }
-    db.collection("usuario").doc(z).set(data)
+    db.collection('usuarios').doc('mmiligaleano@gmail.com').collection('vacunas').doc(z).set(dataVac)
     .then(function(docRef) {
      console.log("OK! " + z);
      }).catch(function(error) {
@@ -57,27 +452,264 @@ function traerDatos(w,x,y,z){
      })
 }
 
-var usuario = db.collection("usuario");
-//var rota = usuario.Rota;
-function mostrarDatos(){
-usuario.get()
-.then(function(querySnapshot) {
-querySnapshot.forEach(function(doc) {
-  var objeto = doc.data();
-console.log("data:" + objeto);
-});
-})
-.catch(function(error) {
-console.log("Error: " , error);
-});
+
+//LLAMAR A LA BASE Y VOLCAR DATOS CREANDO DINAMICAMENTE ELEMENTOS EN SECCION VACUNAS
+
+var usuario = db.collection("/usuario");
+var doc = usuario.doc;//('BCG');
+
+//console.log(usuario);
+
+
+
+function crearDin(w, x, y, z){
+  //var padre = document.getElementById("datosMENI3basta");
+  var padre = document.getElementsByClassName("fechavacunas")[x];
+  var anterior = document.getElementsByClassName("listaVacuna")[x];
+  var padredelbefore = document.getElementsByClassName("contiene-boton")[x];
+  var p = document.createElement("p");
+  var a = document.createElement("a");
+  a.setAttribute("id", "botonFlecha");
+  a.setAttribute("class", "float-right", "btn btn-primary");
+  a.setAttribute("data-toggle", "collapse");
+  a.setAttribute("href", "#" + w);
+  a.setAttribute("role", "button");
+  a.setAttribute("aria-expanded", "false");
+  a.setAttribute("aria-controls", "collapseExample");
+  var icon = document.createElement("i");
+  icon.setAttribute("class", "fas fa-angle-down");
+  p.appendChild(a);
+  a.appendChild(icon);
+  padredelbefore.insertBefore(p, anterior);
+  var div = document.createElement("div");
+  div.setAttribute("id", w);
+  div.setAttribute("class", "collapse");
+  var ul = document.createElement("ul");
+  ul.setAttribute("id", "vacunasDadas");
+  var li = document.createElement("li");
+  li.setAttribute("id", "hospitales");
+  li.setAttribute("class", "float-right");
+  li.innerHTML = y;
+  var li2 = document.createElement("li");
+  li2.setAttribute("id", "fechas");
+  li2.innerHTML = z;
+  padre.appendChild(div);
+  div.appendChild(ul);
+  ul.appendChild(li);
+  ul.appendChild(li2);
 }
-mostrarDatos();
+//crearDin(nombre, 0, lugar, fecha);
 
 
-var query = usuario.where("lugar", "==", "aca");
-console.log(usuario);
-console.log(query);
+// function mostrarNotas(){
+// usuario.get().then(function(querySnapshot){
+//   querySnapshot.forEach(function(doc){
+//       //console.log(doc);
+//       var objeto = doc.data();
+//       console.log(doc.data());
+//       var lugar = objeto.lugar;
+//       var fecha = objeto.fecha;
+//       var nombre = objeto.nombre;
+//       console.log(nombre);
+//       console.log(lugar);
+//       console.log(fecha);
+//       // for(var i = 0; i <= 53; i++){
+//       //   crearDin(objeto.nombre, i, lugar, fecha);
+//       // };
+//       //crearDin(objeto.nombre[0], 0, lugar, fecha);
+//     });
+// });
 
+// } mostrarNotas();
+// mostrarNotas(1);
+// mostrarNotas(2);
+// mostrarNotas(3);
+// mostrarNotas(4);
+// mostrarNotas(5);
+
+// function llamarBCG() {
+//   return output =
+//   // [START get_multiple]
+//   db.collection("usuario").where("nombre", "==", "BCG")
+//       .get()
+//       .then(function(querySnapshot) {
+//           querySnapshot.forEach(function(doc) {
+//               // doc.data() is never undefined for query doc snapshots
+//               console.log(" => ", doc.data());
+//               var objeto = doc.data();
+//               var lugar = objeto.lugar;
+//               var fecha = objeto.fecha;
+//               var nombre = objeto.nombre;
+//               crearDin(nombre, 0, lugar, fecha);
+//           });
+//       })
+//       .catch(function(error) {
+//           console.log("Error getting documents: ", error);
+//       });
+//   // [END get_multiple]
+// } llamarBCG();
+
+// function llamarHepatitisB() {
+//   return output =
+//   db.collection("usuario").where("nombre", "==", "HepatitisB")
+//       .get()
+//       .then(function(querySnapshot) {
+//           querySnapshot.forEach(function(doc) {
+//               console.log(" => ", doc.data());
+//               var objeto = doc.data();
+//               var lugar = objeto.lugar;
+//               var fecha = objeto.fecha;
+//               var nombre = objeto.nombre;
+//               crearDin(nombre, 1, lugar, fecha);
+//           });
+//       })
+//       .catch(function(error) {
+//           console.log("Error getting documents: ", error);
+//       });
+// } llamarHepatitisB();
+
+// function Neumococo() {
+//   return output =
+//   db.collection("usuario").where("nombre", "==", "Neumococo")
+//       .get()
+//       .then(function(querySnapshot) {
+//           querySnapshot.forEach(function(doc) {
+//               console.log(" => ", doc.data());
+//               var objeto = doc.data();
+//               var lugar = objeto.lugar;
+//               var fecha = objeto.fecha;
+//               var nombre = objeto.nombre;
+//               crearDin(nombre, 2, lugar, fecha);
+//           });
+//       })
+//       .catch(function(error) {
+//           console.log("Error getting documents: ", error);
+//       });
+// } Neumococo();
+
+
+
+//ESTO ANDA HERMOSO
+  // function VolcarDatos(x, y) {
+  //   return output =
+  //   db.collection("usuario").where("nombre", "==", x)
+  //       .get()
+  //       .then(function(querySnapshot) {
+  //           querySnapshot.forEach(function(doc) {
+  //               console.log(" => ", doc.data());
+  //               var objeto = doc.data();
+  //               var lugar = objeto.lugar;
+  //               var fecha = objeto.fecha;
+  //               var nombre = objeto.nombre;
+  //               crearDin(nombre, y, lugar, fecha);
+  //           });
+  //       })
+  //       .catch(function(error) {
+  //           console.log("Error getting documents: ", error);
+  //       });
+  // } 
+  
+  // VolcarDatos("BCG", 0);
+  // VolcarDatos("HepatitisB", 1);
+  // VolcarDatos("Neumococo", 2);
+  // VolcarDatos("QP", 3);
+  // VolcarDatos("Rota", 4);
+  // VolcarDatos("POLIO", 5);
+  // VolcarDatos("Meni", 6);
+  // VolcarDatos("Neumococo2", 7);
+  // VolcarDatos("QP2", 8);
+  // VolcarDatos("Rota2", 9);
+  // VolcarDatos("Polio2", 10);
+  // VolcarDatos("Meni2", 11);
+  // VolcarDatos("QP3", 12);
+  // VolcarDatos("Polio3", 13);
+  // VolcarDatos("Gripe", 14);
+  // VolcarDatos("Neumococo3", 15);
+  // VolcarDatos("TV", 16);
+  // VolcarDatos("Gripe2", 17);
+  // VolcarDatos("HepatitisA", 18);
+  // VolcarDatos("Meni3", 19);
+  // VolcarDatos("Gripe3", 20);
+  // VolcarDatos("Varicela", 21);
+  // VolcarDatos("CoQP", 22);
+  // VolcarDatos("Polio4", 23);
+  // VolcarDatos("Gripe4", 24);
+  // VolcarDatos("Gripe5", 25);
+  // VolcarDatos("FA", 26);
+  // VolcarDatos("Gripe6", 27);
+  // VolcarDatos("Polio5", 28);
+  // VolcarDatos("TVSRP", 29);
+  // VolcarDatos("TB", 30);
+  // VolcarDatos("Meni4", 31);
+  // VolcarDatos("HepatitisB2", 32);
+  // VolcarDatos("TVSRP2", 33);
+  // VolcarDatos("TB2", 34);
+  // VolcarDatos("VPH", 35);
+  // VolcarDatos("FA2", 36);
+  // VolcarDatos("HepatitisB3", 37);
+  // VolcarDatos("TVSRP3", 38);
+  // VolcarDatos("DV", 39);
+  // VolcarDatos("FHA", 40);
+  // VolcarDatos("HepatitisB4", 41);
+  // VolcarDatos("TVSRP4", 42);
+  // VolcarDatos("DB", 43);
+  // VolcarDatos("DV2", 44);
+  // VolcarDatos("FHA2", 45);
+  // VolcarDatos("HepatitisB5", 46);
+  // VolcarDatos("TBA", 47);
+  // VolcarDatos("Gripe7", 48);
+  // VolcarDatos("HepatitisB6", 49);
+  // VolcarDatos("Gripe8", 50);
+  // VolcarDatos("TVSRP5", 51);
+  // VolcarDatos("DV3", 52);
+  
+
+
+  function VolcarDatos(x, y) {
+    return output =
+    db.collection('usuarios').doc('mmiligaleano@gmail.com').collection('vacunas').where("nombre", "==", x)
+        .get()
+        .then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                console.log(" => ", doc.data());
+                var objeto = doc.data();
+                var lugar = objeto.lugar;
+                var fecha = objeto.fecha;
+                var nombre = objeto.nombre;
+                crearDin(nombre, y, lugar, fecha);
+            });
+        })
+        .catch(function(error) {
+            console.log("Error getting documents: ", error);
+        });
+  } 
+  
+  VolcarDatos("BCG", 0);
+  VolcarDatos("HepatitisB", 1);
+ VolcarDatos("Neumococo", 2);
+
+
+
+// var usuario = db.collection("usuario");
+// //var rota = usuario.Rota;
+// function mostrarDatos(){
+// usuario.get()
+// .then(function(querySnapshot) {
+// querySnapshot.forEach(function(doc) {
+//   var objeto = doc.data();
+// console.log("data:" + objeto);
+// });
+// })
+// .catch(function(error) {
+// console.log("Error: " , error);
+// });
+// }
+// mostrarDatos();
+
+
+// var query = usuario.where("lugar", "==", "aca");
+// console.log(usuario);
+// console.log(query);
 
 
     // var div = document.getElementsByTagName('div');

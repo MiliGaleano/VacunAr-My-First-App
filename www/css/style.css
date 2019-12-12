@@ -1,0 +1,336 @@
+/*Eliminar margenes y paddings*/
+* {
+    padding: 0;
+    margin: 0;
+  }
+
+li {
+  list-style: none;
+}
+
+#login {
+  background-color: #7596b6;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+#imagenlogo {
+  margin-top: 18%;
+  width: 60vw;
+}
+
+#registrarmail h6 {
+font-size: 3rem;
+color: #ececec;
+padding-top: 0.5rem;
+margin-bottom: 1rem;
+}
+
+#registrarmail p {
+  font-size: 0.8rem;
+  padding-left: 20%;
+  padding-right: 20%;
+  }
+
+#botoneslogin {
+margin-top: 0.7rem;
+}
+
+#registrarmail button {
+  background-color:#ececec;
+  border: none;
+  outline: none;
+  padding: 0.3rem;
+  font-size: 0.8rem;
+  }
+#quickstart-verify-email {
+  margin-top: 0.5rem;
+  }
+
+#contrasenia {
+  margin-top: 1.8rem;
+}
+
+#formulario {
+  width: 100vw;
+}
+
+#formulario h1 {
+  padding-top: 2rem;
+  text-align: center;
+}
+
+#nombre1user {
+  padding-top: 3vh;
+  padding-left: 10vw;
+  display: flex;
+  flex-direction: row;
+  width: 90vw;
+}
+
+#nombre1user input {
+background-color: #d3d3d3;
+width: 50vw;
+}
+/* 
+#fotito {
+font-size: 6rem;
+color: #7596b6;
+padding-left: 25vw;
+} */
+
+/* #crearLibreta input {
+  background-color: #dfdfdf;
+  width: 70vw;
+} */
+
+/* #datosPers {
+width: 80vw;
+} */
+
+#fechadeUs {
+  padding: 0;
+}
+#fechadeNac {
+  padding: 0;
+}
+
+#crearLibreta {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10vw;
+}
+
+#iconoBoton1 {
+  display: flex;
+  margin-left: 10vw;
+  color: white;
+  background-color:#7596b6;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  padding-left: 5px;
+}
+
+#iraVacunas {
+width: 30vw;
+padding: 1rem;
+background-color: #7596b6;
+color: black;
+text-align: center;
+margin-left: 25vw;
+font-weight: bold;
+border-radius: 10%;
+}
+
+form {
+  width: 40%;
+  /* display: flex;
+  flex-direction: column; */
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#primerusuario {
+  display: block;
+}
+
+#Nuevousuario {
+  display: none;
+}
+
+#botonesUsuarios {
+  display: none;
+}
+
+.btn-info {
+  margin-top: .5rem;
+  background-color: #c5ecd7;
+  border: none;
+  color: #7596b6;
+}
+
+.btn-info:not(:disabled):not(.disabled).active {
+  background-color: #7596b6;
+  border: none;
+}
+
+.btn-info:focus {
+  background-color: #7596b6;
+  border: none;
+}
+.btn-info:hover {
+  background-color: #7596b6;
+  border: none;
+}
+
+label {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.8rem;
+  color: rgb(105, 105, 105);
+}
+
+input {
+  background-color: rgb(255, 255, 255);
+  padding: 0.2rem;
+  border: none;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  font-size: 0.7rem;
+  color: rgb(105, 105, 105);
+  height: 24px;
+}
+
+input:focus {
+border: none;
+outline: none;
+}
+
+#iconoBoton {
+  display: flex;
+  margin-left: 50%;
+  color: rgb(44, 73, 170);
+  background-color: white;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  padding-left: 5px;
+}
+
+#btnBCG1 {
+  background-color: initial;
+}
+
+.fa, .fab, .fad, .fal, .far, .fas {
+  line-height: 2;
+}
+
+.card-header {
+  border-color: rgb(141, 235, 235);
+}
+
+.card-header h2 button {
+  font-size: 1.5rem;
+}
+
+.card-header h2 button:hover {
+  text-decoration: none;
+  color: rgb(44, 73, 170);
+  font-weight: 600;
+} 
+
+.card-body {
+  background-color: #c5ecd7;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(44, 73, 170);
+}
+
+#botonFlecha {
+  /*display: none;*/
+  background: none;
+  border: 0;
+  color: inherit;
+}
+
+#vacunasDadas {
+  margin-bottom: 0.5rem;
+}
+
+#vacunasDadas li{
+  color: rgb(105, 105, 105);
+  font-weight: 200;
+}
+
+header {margin-bottom: 3.5rem;
+}
+
+#navbarNavAltMarkup2 {
+  height: 64px;
+}
+
+#calend {
+    width: 75%;
+    font-weight: bold;
+}
+
+#dropdownMenuLink {
+    background-color: #7596b6;
+    border: none;
+    color: rgb(77, 77, 77);
+    padding: 0;
+    margin: 0;
+}
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+  #hola {
+    padding: 0%;
+    margin: 0%;
+    width: 100%;
+}
+
+  #navbarNavAltMarkup {
+      padding: 0%;
+      margin: 0%;
+      max-width: 100%;
+  }
+
+  #novedades {
+    margin: 1.5rem;
+    margin-top: 4.6rem;
+  }
+  #titulo {
+    margin-top: 1.5rem;
+    color: rgb(44, 73, 170);
+    font-size: 1rem;
+  }
+  #contenido {
+    font-size: 0.7rem;
+    margin: 0;
+  }
+
+  #linkNoticia {
+    font-size: 0.7rem;
+  }
+
+  #mapContainer {
+    display: flex;
+    width: 100vw;
+    height: 85vh;
+  }
+
+  #botonEditar {
+    position: fixed;
+    top: 77%;
+    left: 75%;
+    font-size: 1.9rem;
+    width: 3.8rem;
+    height: 3.8rem;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #7596b6;
+    /* color: rgb(44, 73, 170); */
+    color:rgb(66, 71, 82);
+}
+
+#botonEditar2 {
+  position: fixed;
+  top: 70%;
+  left: 78.6%;
+  font-size: 1.1rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #7596b6;
+  /* color: rgb(44, 73, 170); */
+  color:rgb(66, 71, 82);
+}
+
+footer {margin-top: 4rem;
+}

@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Customize this policy to fit your own app's needs. For more guidance, see: -->
+  <meta http-equiv="Content-Security-Policy" content="img-src * 'self' data: https:; default-src gap://ready file://* *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *">
+  <!-- Required meta tags-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
     <!-- iconos fontawesome -->
     <script src="https://kit.fontawesome.com/675f0b7167.js" crossorigin="anonymous"></script>
     <!-- bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!--estilos-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>VacunAr</title>
 </head>
 
@@ -25,13 +27,10 @@
                                     <a class="btn btn-secondary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-bars"></i></a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                  <a class="dropdown-item" href="#">Maria Luz</a>
-                                  <a class="dropdown-item" href="#">Joaquín</a>
+                                  <a class="dropdown-item" href="login.html" onclick="cerrarSesion()">Cerrar sesión</a>
                                   <div class="dropdown-divider"></div>
-                                  <a class="dropdown-item" href="#">Consultas</a>
-                                  <div class="dropdown-divider"></div>
-                                  <a class="dropdown-item" href="#">Crear nuevo perfil</a>
-                                </div>
+                                  <a class="dropdown-item" href="mailto:VacunAr@gmail.com?Subject=Consulta%20Vacunas" target="_top">Consultas</a>
+                                   </div>
                               </div>   
                         <a class="nav-item nav-link active" href="#" id="calend">Mis vacunas</a>
                         <a class="nav-item nav-link" href="#"><i class="fas fa-share-alt"></i></a>
@@ -41,6 +40,14 @@
 
         <div id="cuerpo">
 
+          <div id="botonesUsuarios">
+              <div class="btn-group btn-block">
+                  <button type="button" class="btn btn-info" onclick="usuario2()" id="btnus1">Usuario1</button>
+                  <button type="button" class="btn btn-info" onclick="usuario1()" id="btnus2">Usuario2</button>
+                </div>
+          </div>
+
+          <div id="primerusuario">
             <div class="accordion" id="accordionVacunas">
 
                 <div class="card">
@@ -55,35 +62,13 @@
                   <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionVacunas">
                     <div class="card-body">
                         <ul>
-                            <div>
-                              <p>
-                                <a class="float-right" class="btn btn-primary" data-toggle="collapse" href="#collapseBCG1" role="button" aria-expanded="false" aria-controls="collapseExample" id="botonFlecha">
-                                <i class="fas fa-angle-down"></i>
-                                </a>
-                              </p>
-                            <li>BCG</li>
+                            <div class="contiene-boton">
+                            <li class="listaVacuna">BCG</li>
                             <div id="datosBCG1" class="fechavacunas">
-                                  <div class="collapse" id="collapseBCG1">
-                                      <ul id=vacunasDadas>
-                                          <li class="float-right" id="hospitales">Hospital Rivadavia</li>
-                                          <li id="fechas">27/05/2012</li>
-                                      </ul>
-                                  </div>
                             </div></div>
-                          <div>
-                            <p>
-                                <a class="float-right" class="btn btn-primary" data-toggle="collapse" href="#collapseHB1" role="button" aria-expanded="false" aria-controls="collapseExample" id="botonFlecha">
-                                <i class="fas fa-angle-down"></i>
-                                </a>
-                            </p>
-                            <li>Hepatitis B HB</li><div id="datosHB1" class="fechavacunas">
-                              <div class="collapse" id="collapseHB1">
-                                <ul id=vacunasDadas>
-                                    <li class="float-right" id="hospitales">Hospital Rivadavia</li>
-                                    <li id="fechas">27/05/2012</li>
-                                </ul>
-                            </div></div>
-                          </div>
+                          <div class="contiene-boton">
+                            <li class="listaVacuna">Hepatitis B HB</li><div id="datosHB1" class="fechavacunas">
+                          </div></div>
                         </ul>
                     </div>
                   </div>
@@ -100,10 +85,18 @@
                   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionVacunas">
                     <div class="card-body">
                         <ul>
-                            <li>Neumococo Conjugada</li><div id="datosNC2" class="fechavacunas"></div>
-                            <li>Quintuple Pentavalente DTP-HB-Hib</li><div id="datosQP2" class="fechavacunas"></div>
-                            <li>Rotavirus</li><div id="datosROTA2" class="fechavacunas"></div>
-                            <li>Polio</li><div id="datosPOLIO2" class="fechavacunas"></div>
+                            <div class="contiene-boton">
+                            <li class="listaVacuna">Neumococo Conjugada</li><div id="datosNC2" class="fechavacunas"></div>
+                            </div>
+                            <div class="contiene-boton">
+                            <li class="listaVacuna">Quintuple Pentavalente DTP-HB-Hib</li><div id="datosQP2" class="fechavacunas"></div>
+                            </div>
+                            <div class="contiene-boton">
+                            <li class="listaVacuna">Rotavirus</li><div id="datosROTA2" class="fechavacunas"></div>
+                            </div>
+                            <div class="contiene-boton">
+                            <li class="listaVacuna">Polio</li><div id="datosPOLIO2" class="fechavacunas"></div>
+                            </div>
                         </ul>
                     </div>
                   </div>
@@ -120,7 +113,14 @@
                   <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionVacunas">
                     <div class="card-body">
                         <ul>
-                            <li>Meningococo</li><div id="datosMENI3" class="fechavacunas"></div>
+                          <div class="contiene-boton">
+                            <!-- <p>
+                                <a class="float-right" class="btn btn-primary" data-toggle="collapse" href="#collapseHB1" role="button" aria-expanded="false" aria-controls="collapseExample" id="botonFlecha">
+                                <i class="fas fa-angle-down"></i>
+                                </a>
+                              </p> -->
+                            <li class="listaVacuna">Meningococo</li><div id="datosMENI3basta" class="fechavacunas"></div>
+                          </div>
                         </ul>
                     </div>
                   </div>
@@ -138,10 +138,18 @@
                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionVacunas">
                       <div class="card-body">
                         <ul>
-                            <li>Neumococo Conjugada</li><div id="datosNC4" class="fechavacunas"></div>
-                            <li>Quintuple Pentavalente DTP-HB-Hib</li><div id="datosQP4" class="fechavacunas"></div>
-                            <li>Rotavirus</li><div id="datosROTA4" class="fechavacunas"></div>
-                            <li>Polio</li><div id="datosPOLIO4" class="fechavacunas"></div>
+                          <div class="contiene-boton">
+                            <li class="listaVacuna">Neumococo Conjugada</li><div id="datosNC4" class="fechavacunas"></div>
+                          </div>
+                          <div class="contiene-boton">
+                            <li class="listaVacuna">Quintuple Pentavalente DTP-HB-Hib</li><div id="datosQP4" class="fechavacunas"></div>
+                          </div>
+                          <div class="contiene-boton">
+                            <li class="listaVacuna">Rotavirus</li><div id="datosROTA4" class="fechavacunas"></div>
+                          </div>
+                          <div class="contiene-boton">
+                            <li class="listaVacuna">Polio</li><div id="datosPOLIO4" class="fechavacunas"></div>
+                          </div>
                         </ul>
                       </div>
                    </div>
@@ -158,7 +166,9 @@
                         <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionVacunas">
                           <div class="card-body">
                                 <ul>
-                                    <li>Meningococo</li><div id="datosMENI5" class="fechavacunas"></div>
+                                  <div class="contiene-boton">
+                                    <li class="listaVacuna">Meningococo</li><div id="datosMENI5" class="fechavacunas"></div>
+                                  </div>
                                 </ul>
                           </div>
                         </div>
@@ -175,9 +185,15 @@
                         <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionVacunas">
                           <div class="card-body">
                                 <ul>
-                                    <li>Quintuple Pentavalente DTP-HB-Hib</li><div id="datosQP6" class="fechavacunas"></div>
-                                    <li>Polio</li><div id="datosPOLIO6" class="fechavacunas"></div>
-                                    <li>Gripe</li><div id="datosGRIPE6" class="fechavacunas"></div>
+                                    <div class="contiene-boton">
+                                    <li class="listaVacuna">Quintuple Pentavalente DTP-HB-Hib</li><div id="datosQP6" class="fechavacunas"></div>
+                                    </div>
+                                    <div class="contiene-boton">
+                                    <li class="listaVacuna">Polio</li><div id="datosPOLIO6" class="fechavacunas"></div>
+                                    </div>
+                                    <div class="contiene-boton">
+                                    <li class="listaVacuna">Gripe</li><div id="datosGRIPE6" class="fechavacunas"></div>
+                                  </div>
                                 </ul>
                           </div>
                         </div>
@@ -195,10 +211,18 @@
                             <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionVacunas">
                               <div class="card-body">
                                     <ul>
-                                        <li>Neumococo Conjugada</li><div id="datosNC7" class="fechavacunas"></div>
-                                        <li>Triple viral SRP</li><div id="datosTV7" class="fechavacunas"></div>
-                                        <li>Gripe</li><div id="datosGRIPE7" class="fechavacunas"></div>
-                                        <li>Hepatitis A HA</li><div id="datosHA7" class="fechavacunas"></div>
+                                        <div class="contiene-boton">
+                                        <li class="listaVacuna">Neumococo Conjugada</li><div id="datosNC7" class="fechavacunas"></div>
+                                        </div>
+                                        <div class="contiene-boton">
+                                        <li class="listaVacuna">Triple viral SRP</li><div id="datosTV7" class="fechavacunas"></div>
+                                        </div>
+                                        <div class="contiene-boton">
+                                        <li class="listaVacuna">Gripe</li><div id="datosGRIPE7" class="fechavacunas"></div>
+                                        </div>
+                                        <div class="contiene-boton">
+                                        <li class="listaVacuna">Hepatitis A HA</li><div id="datosHA7" class="fechavacunas"></div>
+                                      </div>
                                     </ul>
                               </div>
                             </div>
@@ -215,9 +239,15 @@
                             <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionVacunas">
                               <div class="card-body">
                                     <ul>
-                                        <li>Meningococo</li><div id="datosMENI8" class="fechavacunas"></div>
-                                        <li>Gripe</li><div id="datosGRIPE8" class="fechavacunas"></div>
-                                        <li>Varicela</li><div id="datosVARI8" class="fechavacunas"></div>
+                                      <div class="contiene-boton">
+                                        <li class="listaVacuna">Meningococo</li><div id="datosMENI8" class="fechavacunas"></div>
+                                        </div>
+                                        <div class="contiene-boton">
+                                        <li class="listaVacuna">Gripe</li><div id="datosGRIPE8" class="fechavacunas"></div>
+                                        </div>
+                                        <div class="contiene-boton">
+                                        <li class="listaVacuna">Varicela</li><div id="datosVARI8" class="fechavacunas"></div>
+                                      </div>
                                     </ul>
                               </div>
                             </div>
@@ -234,9 +264,15 @@
                             <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionVacunas">
                               <div class="card-body">
                                     <ul>
-                                        <li>Cuádruple o Quintuple Pentavalente</li><div id="datosQP9" class="fechavacunas"></div>
-                                        <li>Polio</li><div id="datosPOLIO9" class="fechavacunas"></div>
-                                        <li>Gripe</li><div id="datosGRIPE9" class="fechavacunas"></div>
+                                      <div class="contiene-boton">
+                                        <li class="listaVacuna">Cuádruple o Quintuple Pentavalente</li><div id="datosQP9" class="fechavacunas"></div>
+                                      </div>
+                                      <div class="contiene-boton">
+                                        <li class="listaVacuna">Polio</li><div id="datosPOLIO9" class="fechavacunas"></div>
+                                      </div>
+                                      <div class="contiene-boton">
+                                        <li class="listaVacuna">Gripe</li><div id="datosGRIPE9" class="fechavacunas"></div>
+                                      </div>
                                     </ul>
                               </div>
                             </div>
@@ -254,8 +290,12 @@
                                   <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionVacunas">
                                     <div class="card-body">
                                             <ul>
-                                                <li>Gripe</li><div id="datosGRIPE10" class="fechavacunas"></div>
-                                                <li>Fiebre Amarilla FA</li><div id="datosFA10" class="fechavacunas"></div>
+                                              <div class="contiene-boton">
+                                                <li class="listaVacuna">Gripe</li><div id="datosGRIPE10" class="fechavacunas"></div>
+                                              </div>
+                                              <div class="contiene-boton">
+                                                <li class="listaVacuna">Fiebre Amarilla FA</li><div id="datosFA10" class="fechavacunas"></div>
+                                              </div>
                                             </ul>
                                     </div>
                                   </div>
@@ -272,7 +312,9 @@
                                   <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-parent="#accordionVacunas">
                                     <div class="card-body">
                                             <ul>
-                                                <li>Gripe</li><div id="datosGRIPE11" class="fechavacunas"></div>
+                                              <div class="contiene-boton">
+                                                <li class="listaVacuna">Gripe</li><div id="datosGRIPE11" class="fechavacunas"></div>
+                                              </div>
                                             </ul>
                                     </div>
                                   </div>
@@ -289,9 +331,15 @@
                                   <div id="collapseTwelf" class="collapse" aria-labelledby="headingTwelf" data-parent="#accordionVacunas">
                                     <div class="card-body">
                                             <ul>
-                                                <li>Polio</li><div id="datosPOLIO12" class="fechavacunas"></div>
-                                                <li>Triple viral SRP</li><div id="datosTV12" class="fechavacunas"></div>
-                                                <li>Triple Bacteriana Celular DTP</li><div id="datosTBC12" class="fechavacunas"></div>
+                                              <div class="contiene-boton">
+                                                <li class="listaVacuna">Polio</li><div id="datosPOLIO12" class="fechavacunas"></div>
+                                              </div>
+                                              <div class="contiene-boton">
+                                                <li class="listaVacuna">Triple viral SRP</li><div id="datosTV12" class="fechavacunas"></div>
+                                              </div>
+                                              <div class="contiene-boton">
+                                                <li class="listaVacuna">Triple Bacteriana Celular DTP</li><div id="datosTBC12" class="fechavacunas"></div>
+                                              </div>
                                             </ul>
                                     </div>
                                   </div>
@@ -308,12 +356,24 @@
                                         <div id="collapseThirteen" class="collapse" aria-labelledby="headingThirteen" data-parent="#accordionVacunas">
                                           <div class="card-body">
                                                 <ul>
-                                                    <li>Meningococo</li><div id="datosMENI13" class="fechavacunas"></div>
-                                                    <li>Hepatitis B HB</li><div id="datosHB13" class="fechavacunas"></div>
-                                                    <li>Triple viral SRP</li><div id="datosTV13" class="fechavacunas"></div>
-                                                    <li>Triple Bacteriana Acelular dTpa</li><div id="datosTB13" class="fechavacunas"></div>
-                                                    <li>Virus Papiloma Humano VPH</li><div id="datosVPH13" class="fechavacunas"></div>
-                                                    <li>Fiebre Amarilla FA</li><div id="datosFA13" class="fechavacunas"></div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Meningococo</li><div id="datosMENI13" class="fechavacunas"></div>
+                                                  </div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Hepatitis B HB</li><div id="datosHB13" class="fechavacunas"></div>
+                                                  </div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Triple viral SRP</li><div id="datosTV13" class="fechavacunas"></div>
+                                                  </div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Triple Bacteriana Acelular dTpa</li><div id="datosTB13" class="fechavacunas"></div>
+                                                  </div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Virus Papiloma Humano VPH</li><div id="datosVPH13" class="fechavacunas"></div>
+                                                  </div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Fiebre Amarilla FA</li><div id="datosFA13" class="fechavacunas"></div>
+                                                  </div>
                                                 </ul>
                                           </div>
                                         </div>
@@ -331,10 +391,18 @@
                                         <div id="collapseFourteen" class="collapse" aria-labelledby="headingFourteen" data-parent="#accordionVacunas">
                                           <div class="card-body">
                                                 <ul>
-                                                    <li>Hepatitis B HB</li><div id="datosHB14" class="fechavacunas"></div> 
-                                                    <li>Triple viral SRP</li><div id="datosTV14" class="fechavacunas"></div>
-                                                    <li>Doble Viral SR</li><div id="datosDV14" class="fechavacunas"></div>
-                                                    <li>Fiebre Hemorrágica Argentina FHA</li><div id="datosFHA14" class="fechavacunas"></div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Hepatitis B HB</li><div id="datosHB14" class="fechavacunas"></div> 
+                                                  </div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Triple viral SRP</li><div id="datosTV14" class="fechavacunas"></div>
+                                                  </div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Doble Viral SR</li><div id="datosDV14" class="fechavacunas"></div>
+                                                  </div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Fiebre Hemorrágica Argentina FHA</li><div id="datosFHA14" class="fechavacunas"></div>
+                                                  </div>
                                                 </ul>
                                           </div>
                                         </div>
@@ -351,11 +419,21 @@
                                         <div id="collapseFifteen" class="collapse" aria-labelledby="headingFifteen" data-parent="#accordionVacunas">
                                           <div class="card-body">
                                                 <ul>
-                                                    <li>Hepatitis B HB</li><div id="datosHB15" class="fechavacunas"></div> 
-                                                    <li>Triple viral SRP</li><div id="datosTV15" class="fechavacunas"></div>
-                                                    <li>Doble Bacteriana dT</li><div id="datosDB15" class="fechavacunas"></div>
-                                                    <li>Doble Viral SR</li><div id="datosDV15" class="fechavacunas"></div>
-                                                    <li>Fiebre Hemorrágica Argentina FHA</li><div id="datosFHA15" class="fechavacunas"></div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Hepatitis B HB</li><div id="datosHB15" class="fechavacunas"></div> 
+                                                  </div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Triple viral SRP</li><div id="datosTV15" class="fechavacunas"></div>
+                                                  </div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Doble Bacteriana dT</li><div id="datosDB15" class="fechavacunas"></div>
+                                                  </div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Doble Viral SR</li><div id="datosDV15" class="fechavacunas"></div>
+                                                  </div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Fiebre Hemorrágica Argentina FHA</li><div id="datosFHA15" class="fechavacunas"></div>
+                                                  </div>
                                                 </ul>
                                           </div>
                                         </div>
@@ -372,9 +450,15 @@
                                         <div id="collapseSixteen" class="collapse" aria-labelledby="headingSixteen" data-parent="#accordionVacunas">
                                           <div class="card-body">
                                                 <ul>
-                                                    <li>Hepatitis B HB</li><div id="datosHB16" class="fechavacunas"></div> 
-                                                    <li>Triple Bacteriana Acelular dTpa</li><div id="datosTB16" class="fechavacunas"></div>
-                                                    <li>Gripe</li><div id="datosGRIPE16" class="fechavacunas"></div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Hepatitis B HB</li><div id="datosHB16" class="fechavacunas"></div> 
+                                                  </div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Triple Bacteriana Acelular dTpa</li><div id="datosTB16" class="fechavacunas"></div>
+                                                  </div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Gripe</li><div id="datosGRIPE16" class="fechavacunas"></div>
+                                                  </div>
                                                 </ul>
                                           </div>
                                         </div>
@@ -391,24 +475,32 @@
                                         <div id="collapseSeventeen" class="collapse" aria-labelledby="headingSeventeen" data-parent="#accordionVacunas">
                                             <div class="card-body">
                                                 <ul>
-                                                    <li>Hepatitis B HB</li><div id="datosHB17" class="fechavacunas"></div> 
-                                                    <li>Gripe</li><div id="datosGRIPE17" class="fechavacunas"></div>
-                                                    <li>Triple viral SRP</li><div id="datosTV17" class="fechavacunas"></div>
-                                                    <li>Doble Viral SR</li><div id="datosDV17" class="fechavacunas"></div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Hepatitis B HB</li><div id="datosHB17" class="fechavacunas"></div> 
+                                                  </div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Gripe</li><div id="datosGRIPE17" class="fechavacunas"></div>
+                                                  </div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Triple viral SRP</li><div id="datosTV17" class="fechavacunas"></div>
+                                                  </div>
+                                                  <div class="contiene-boton">
+                                                    <li class="listaVacuna">Doble Viral SR</li><div id="datosDV17" class="fechavacunas"></div>
+                                                  </div>
                                                 </ul>
                                             </div>
                                         </div>
                                       </div>
             </div>
+          </div>
         </div>
 
-
+<a href="formulario.html"><div id="botonEditar"><i class="fas fa-pencil-alt"></i></div></a>
 
     <footer>
         <nav class="navbar fixed-bottom navbar-expand navbar-light bg-light" id="hola">
             <div class="container d-flex p-2 bd-highlightcollapse navbar-collapse navbar-nav d-flex justify-content-around" style="background-color: #7596b6;" id="navbarNavAltMarkup">
                     <a class="nav-item nav-link active" href="#"><i class="fas fa-syringe"></i></a>
-                    <a class="nav-item nav-link" href="calendario.html"><i class="fas fa-calendar-alt"></i></a>
                     <a class="nav-item nav-link" href="noticias.html"><i class="fas fa-bullhorn"></i></a>
                     <a class="nav-item nav-link" href="mapa.html"><i class="fas fa-map-marked-alt"></i></a>
             </div>
@@ -416,16 +508,15 @@
     </footer>
 
 
-    <!-- firebase -->
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!--script firebase -->
     <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
-    <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-firestore.js"></script>
-    
-<script src="firebase.js"></script>
-<!-- <script src="script.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+<!-- script de bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="js/firebase.js"></script>
 </body>
 </html>

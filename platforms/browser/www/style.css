@@ -8,9 +8,105 @@ li {
   list-style: none;
 }
 
-#botonVacunas {
-  width: 100%;
-  text-align: left;
+#login {
+  background-color: #7596b6;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+#imagenlogo {
+  margin-top: 18%;
+  width: 60vw;
+}
+
+#registrarmail h6 {
+font-size: 3rem;
+color: #ececec;
+padding-top: 0.5rem;
+margin-bottom: 1rem;
+}
+
+#registrarmail p {
+  font-size: 0.8rem;
+  padding-left: 20%;
+  padding-right: 20%;
+  }
+
+#botoneslogin {
+margin-top: 0.7rem;
+}
+
+#registrarmail button {
+  background-color:#ececec;
+  border: none;
+  outline: none;
+  padding: 0.3rem;
+  font-size: 0.8rem;
+  }
+#quickstart-verify-email {
+  margin-top: 0.5rem;
+  }
+
+#contrasenia {
+  margin-top: 1.8rem;
+}
+
+#formulario {
+  width: 100vw;
+}
+#formulario h1 {
+  padding-top: 2rem;
+  text-align: center;
+}
+
+#fotito {
+font-size: 6rem;
+color: #7596b6;
+padding-left: 25vw;
+}
+
+#crearLibreta input {
+  background-color: #dfdfdf;
+  width: 70vw;
+}
+
+#datosPers {
+width: 80vw;
+}
+
+#fechadeUs {
+  padding: 0;
+}
+#fechadeNac {
+  padding: 0;
+}
+
+#crearLibreta {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10vw;
+}
+
+#iconoBoton1 {
+  display: flex;
+  margin-left: 10%;
+  color: white;
+  background-color:#7596b6;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  padding-left: 5px;
+}
+
+#iraVacunas {
+width: 30vw;
+padding: 1rem;
+background-color: #7596b6;
+color: black;
+text-align: center;
+margin-left: 25vw;
+font-weight: bold;
+border-radius: 10%;
 }
 
 form {
@@ -104,7 +200,8 @@ outline: none;
 header {margin-bottom: 4rem;
 }
 
-footer {margin-top: 4rem;
+#navbarNavAltMarkup2 {
+  height: 64px;
 }
 
 #calend {
@@ -153,3 +250,26 @@ footer {margin-top: 4rem;
   #linkNoticia {
     font-size: 0.7rem;
   }
+
+  #mapContainer {
+    display: flex;
+    width: 100vw;
+    height: 80vh;
+  }
+
+  #botonEditar {
+    position: fixed;
+    top: 77%;
+    left: 75%;
+    font-size: 1.9rem;
+    width: 3.8rem;
+    height: 3.8rem;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #7596b6;
+    /* color: rgb(44, 73, 170); */
+    color:rgb(66, 71, 82);
+}
+
+footer {margin-top: 4rem;
+}
