@@ -35,6 +35,10 @@
             {
               "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"PDFService\"><param name=\"android-package\" value=\"com.pdf.generator.PDFGenerator\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -99,6 +103,9 @@
       "PACKAGE_NAME": "com.phonegap.helloworld"
     },
     "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.phonegap.helloworld"
+    },
+    "cordova-pdf-generator": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
     }
   },
@@ -338,6 +345,16 @@
       "clobbers": [
         "navigator.splashscreen"
       ]
+    },
+    {
+      "id": "cordova-pdf-generator.pdf",
+      "file": "plugins/cordova-pdf-generator/www/pdf.js",
+      "pluginId": "cordova-pdf-generator",
+      "clobbers": [
+        "cordova.plugins.pdf",
+        "pugin.pdf",
+        "pdf"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -348,6 +365,7 @@
     "cordova-plugin-statusbar": "1.0.1",
     "cordova-plugin-vibration": "3.1.1",
     "cordova-plugin-whitelist": "1.2.2",
-    "cordova-plugin-splashscreen": "5.0.4-dev"
+    "cordova-plugin-splashscreen": "5.0.4-dev",
+    "cordova-pdf-generator": "2.0.8"
   }
 }

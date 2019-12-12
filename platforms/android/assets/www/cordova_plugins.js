@@ -234,6 +234,16 @@ module.exports = [
     "clobbers": [
       "navigator.splashscreen"
     ]
+  },
+  {
+    "id": "cordova-pdf-generator.pdf",
+    "file": "plugins/cordova-pdf-generator/www/pdf.js",
+    "pluginId": "cordova-pdf-generator",
+    "clobbers": [
+      "cordova.plugins.pdf",
+      "pugin.pdf",
+      "pdf"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -246,7 +256,8 @@ module.exports.metadata =
   "cordova-plugin-statusbar": "1.0.1",
   "cordova-plugin-vibration": "3.1.1",
   "cordova-plugin-whitelist": "1.2.2",
-  "cordova-plugin-splashscreen": "5.0.4-dev"
+  "cordova-plugin-splashscreen": "5.0.4-dev",
+  "cordova-pdf-generator": "2.0.8"
 };
 // BOTTOM OF METADATA
 });

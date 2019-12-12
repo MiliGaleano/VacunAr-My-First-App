@@ -19,7 +19,25 @@
   document.addEventListener("deviceready", onDeviceReady, false);
   function onDeviceReady() {
       console.log('hola' + navigator.camera);
-  }
+      console.log('dfg' + cordova.file);
+      
+document.getElementById('pdfSave').addEventListener('click', pdfSave, false);
+
+function pdfSave() {
+ 
+  let options = {
+      documentSize: 'A4',
+      type: 'share',
+      fileName: 'misVacunas.pdf'
+    }
+
+    pdf.fromData( '<html><h1>Hello World</h1></html>', options)
+.then((stats)=> console.log('status', stats) )   // ok..., ok if it was able to handle the file to the OS.  
+.catch((err)=>console.err(err))
+
+
+}
+}
 
   document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
@@ -192,27 +210,6 @@ function cerrarSesion(){
   firebase.auth().signOut();
   }
 
-  function crearuser() {
-    document.getElementById("botonesUsuarios").style.display = "block";
-    document.getElementById("botonEditar2").style.display = "none";
-  }
-
-  function usuario1() {
-    document.getElementById("primerusuario").style.display = "none";
-    document.getElementById("Nuevousuario").style.display = "block";
-    document.getElementById("btnus2").setAttribute("class", "btn btn-info active");
-    document.getElementById("btnus1").setAttribute("class", "btn btn-info");
-  }
-
-  function usuario2() {
-    document.getElementById("primerusuario").style.display = "block";
-    document.getElementById("Nuevousuario").style.display = "none";
-    document.getElementById("btnus2").setAttribute("class", "btn btn-info");
-    document.getElementById("btnus1").setAttribute("class", "btn btn-info active");
-  }
-
-
-
 //COLECCION USUARIOS
 var mail = document.getElementById('mailUs');
 var nombreUs = document.getElementById('nombreUsuario');
@@ -366,3 +363,172 @@ function crearDin(w, x, y, z){
   VolcarDatos("Gripe8", 50);
   VolcarDatos("TVSRP5", 51);
   VolcarDatos("DV3", 52);
+
+
+
+
+//   document.addEventListener("deviceready", function() { 
+//     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+
+//     console.log('file system open: ' + fs.name);
+//     fs.root.getFile("newPersistentFile.txt", { create: true, exclusive: false }, function (fileEntry) {
+
+//         console.log("fileEntry is file?" + fileEntry.isFile.toString());
+//         // fileEntry.name == 'someFile.txt'
+//         // fileEntry.fullPath == '/someFile.txt'
+//         writeFile(fileEntry, null);
+
+//     }, onErrorCreateFile);
+
+// }, onErrorLoadFs);
+
+
+
+
+
+// function writeFile(fileEntry, dataObj) {
+//   // Create a FileWriter object for our FileEntry (log.txt).
+//   fileEntry.createWriter(function (fileWriter) {
+
+//       fileWriter.onwriteend = function() {
+//           console.log("Successful file write...");
+//           readFile(fileEntry);
+//       };
+
+//       fileWriter.onerror = function (e) {
+//           console.log("Failed file write: " + e.toString());
+//       };
+
+//       // If data object is not passed in,
+//       // create a new Blob instead.
+//       if (!dataObj) {
+//           dataObj = new Blob(['some file data'], { type: 'text/plain' });
+//       }
+
+//       fileWriter.write(dataObj);
+//   });
+// }
+
+
+
+
+// function readFile(fileEntry) {
+
+//   fileEntry.file(function (file) {
+//       var reader = new FileReader();
+
+//       reader.onloadend = function() {
+//           console.log("Successful file read: " + this.result);
+//           displayFileData(fileEntry.fullPath + ": " + this.result);
+//       };
+
+//       reader.readAsText(file);
+
+//   }, onErrorReadFile);
+// }
+
+//   });
+
+
+
+
+
+
+
+
+
+// var pdfOutput = 'me gusta el arte';
+// var usermail = sessionStorage.getItem("usermail");
+// savePDF("Vacunas"+usermail+".pdf", pdfOutput);
+// console.log(savePDF("Vacunas"+usermail+".pdf", pdfOutput));
+
+// function savePDF(fileName, fileData) {
+
+//   document.addEventListener("deviceready", function() { 
+//                 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+
+//                     console.log('file system open: ' + fs.name);
+//                     fs.root.getFile("newPersistentFile.txt", { create: true, exclusive: false }, function 														(fileEntry) {
+
+//                         console.log("fileEntry is file?" + fileEntry.isFile.toString());
+//                         // fileEntry.name == 'someFile.txt'
+//                         // fileEntry.fullPath == '/someFile.txt'
+//                         writeFile(fileEntry, null);
+
+//                     },
+//                         console.log("Error DATEI KONNTE NICHT ERSTELLT WERDEN " + fileName),
+//                         alert("Datei konnte nicht erstellt werden " + fileName)
+
+//                     );
+
+//                 }, console.log("onErrorLoadFs" + LocalFileSystem.PERSISTENT));
+
+
+//                 function writeFile(fileEntry, dataObj) {
+
+//                     fileEntry.createWriter(function (fileWriter) {
+
+//                         fileWriter.onwriteend = function() {
+//                             console.log("Successful file write..." );
+//                             alert("Datei erfolgreich geschrieben" + fileEntry);
+//                             readFile(fileEntry);
+//                         };
+
+//                         fileWriter.onerror = function (e) {
+
+//                             alert("schreiben schlug fehl: " + e.toString());
+//                             console.log("Failed file write: " + e.toString());
+//                         };
+
+//                         // If data object is not passed in,
+//                         // create a new Blob instead.
+//                         if (!dataObj) {
+//                             dataObj = new Blob([fileData], { type: 'application/pdf' });
+//                         }
+
+//                         fileWriter.write(dataObj);
+//                     });
+//                 }
+
+//                 function readFile(fileEntry) {
+
+//                     fileEntry.file(function (file) {
+//                         var reader = new FileReader();
+
+//                         reader.onloadend = function() {
+//                             console.log("Successful file read: ");
+//                             //displayFileData(fileEntry.fullPath + ": " + this.result);
+//                         };
+
+//                         //reader.readAsText(file);
+
+//                     }, alert(fileEntry + "konnte nicht gelesen werden"));
+//                 }
+
+
+//           }, false);
+
+//         }
+
+
+// var cordova;
+// // document.addEventListener('deviceready',
+//   // start using cordova plugin here.
+
+// document.getElementById('pdfSave').addEventListener('click', pdfSave, false);
+
+// function pdfSave() {
+//   // start using cordova plugin here.
+//   // var usermail = sessionStorage.getItem("usermail");
+//   let options = {
+//       documentSize: 'A4',
+//       type: 'share',
+//       fileName: 'misVacunas.pdf'
+//     }
+
+//     cordova.plugins.pdf.fromData( '<html><h1>Hello World</h1></html>', options)
+// .then((stats)=> console.log('status', stats) )   // ok..., ok if it was able to handle the file to the OS.  
+// .catch((err)=>console.err(err))
+
+
+// }

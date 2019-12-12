@@ -23,6 +23,9 @@
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="PDFService">
+        <param name="android-package" value="com.pdf.generator.PDFGenerator" />
+    </feature>
     <name>VacunAr</name>
     <description>
         Llevá tu libreta de vacunación siempre con vos.
@@ -40,7 +43,24 @@
     <allow-intent href="geo:*" />
     <icon src="www/img/icono.png" />
     <allow-intent href="market:*" />
+    <splash src="www/splash.png" />
+    <splash qualifier="land-hdpi" src="res/drawable-land-hdpi/splash.png" />
+    <splash qualifier="land-ldpi" src="res/drawable-land-ldpi/splash.png" />
+    <splash qualifier="land-mdpi" src="res/drawable-land-mdpi/splash.png" />
+    <splash qualifier="land-xhdpi" src="res/drawable-land-xhdpi/splash.png" />
+    <splash qualifier="land-xxhdpi" src="res/drawable-land-xxhdpi/splash.png" />
+    <splash qualifier="land-xxxhdpi" src="res/drawable-land-xxxhdpi/splash.png" />
+    <splash qualifier="port-hdpi" src="res/drawable-port-hdpi/splash.png" />
+    <splash qualifier="port-ldpi" src="res/drawable-port-ldpi/splash.png" />
+    <splash qualifier="port-mdpi" src="res/drawable-port-mdpi/splash.png" />
+    <splash qualifier="port-xhdpi" src="res/drawable-port-xhdpi/splash.png" />
+    <splash qualifier="port-xxhdpi" src="res/drawable-port-xxhdpi/splash.png" />
+    <splash qualifier="port-xxxhdpi" src="res/drawable-port-xxxhdpi/splash.png" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
+    <preference name="AndroidPersistentFileLocation" value="Internal" />
+    <preference name="AndroidExtraFilesystems" value="files,files-external,documents,sdcard,cache,cache-external,assets,root" />
+    <preference name="SplashScreen" value="splash" />
+    <preference name="SplashScreenDelay" value="3000" />
 </widget>

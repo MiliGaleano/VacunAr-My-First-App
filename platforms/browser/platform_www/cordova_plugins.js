@@ -246,6 +246,16 @@ module.exports = [
         "id": "cordova-plugin-splashscreen.SplashScreenProxy",
         "pluginId": "cordova-plugin-splashscreen",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-pdf-generator/www/pdf.js",
+        "id": "cordova-pdf-generator.pdf",
+        "pluginId": "cordova-pdf-generator",
+        "clobbers": [
+            "cordova.plugins.pdf",
+            "pugin.pdf",
+            "pdf"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -258,7 +268,8 @@ module.exports.metadata =
     "cordova-plugin-file": "6.0.2",
     "cordova-plugin-camera": "4.1.0",
     "cordova-plugin-geolocation": "4.0.2",
-    "cordova-plugin-splashscreen": "5.0.4-dev"
+    "cordova-plugin-splashscreen": "5.0.4-dev",
+    "cordova-pdf-generator": "2.0.8"
 }
 // BOTTOM OF METADATA
 });
