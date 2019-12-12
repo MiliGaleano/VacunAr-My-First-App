@@ -21,22 +21,29 @@
       console.log('hola' + navigator.camera);
       console.log('dfg' + cordova.file);
       
-document.getElementById('pdfSave').addEventListener('click', pdfSave, false);
+//document.getElementById('pdfSave').addEventListener('click', pdfSave, false);
 
-function pdfSave() {
+function pdfSavePor() {
  
   let options = {
       documentSize: 'A4',
-      type: 'share',
+      type: 'base64',
       fileName: 'misVacunas.pdf'
     }
 
     pdf.fromData( '<html><h1>Hello World</h1></html>', options)
-.then((stats)=> console.log('status', stats) )   // ok..., ok if it was able to handle the file to the OS.  
-.catch((err)=>console.err(err))
+.then(function(base64){               
+  // To define the type of the Blob
+  var contentType = "application/pdf";
+      
+  // if cordova.file is not available use instead :
+  // var folderpath = "file:///storage/emulated/0/Download/";
+  var folderpath = cordova.file.externalRootDirectory + "Download/"; //you can select other folders
+  savebase64AsPDF(folderpath, fileName, base64, contentType);          
+}).catch((err)=>console.err(err))
 
-
-}
+} 
+document.getElementById('pdfGuardar').addEventListener('click', pdfSavePor, false);
 }
 
   document.addEventListener("deviceready", onDeviceReady, false);
