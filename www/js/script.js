@@ -9,7 +9,7 @@ var fecha_actual = String(anio+"-"+mes+"-"+dia);
 
 //LLAMO LA API, FILTRO POR PALABRA 'VACUNAS' Y POR EL DÍA ACTUAL
 var url = 'https://newsapi.org/v2/everything?' +
-          'q=vacunas&' +
+          'q=vacuna&' +
           'from='+ fecha_actual + '&' +
           'sortBy=popularity&' +
           'apiKey=b77e6ef751154c3cb5b7fb5757140754';

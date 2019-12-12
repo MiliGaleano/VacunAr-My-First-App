@@ -4,7 +4,6 @@ function onDeviceReady() {
     console.log("navigator.geolocation works well");
 }
 
-
 var onSuccess = function(position) {
         var lon = position.coords.longitude;
         var lat = position.coords.latitude;
@@ -16,7 +15,6 @@ var onSuccess = function(position) {
         map.setCenter(coords);
         return lon, lat;
 };
-
 
 function onError(error) {
   alert('code: '    + error.code    + '\n' +
@@ -60,7 +58,7 @@ var behavior = new H.mapevents.Behavior(mapEvents);
   'height="22" /><text x="12" y="18" font-size="12pt" ' +
   'font-family="Arial" font-weight="bold" text-anchor="middle" ' +
   'fill="#8debeb">V</text></svg>';
-  
+
 // Create an icon, an object holding the latitude and longitude, and a marker:
   var icon = new H.map.Icon(svgMarkup),
   markerHGarrahan = new H.map.Marker({lat: -34.629938, lng: -58.394164}, {icon: icon});

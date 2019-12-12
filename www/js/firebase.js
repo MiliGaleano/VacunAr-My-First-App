@@ -52,11 +52,11 @@ function onDeviceReady() {
 }
 
 
-function enviarme(){
-  var usermail = sessionStorage.getItem("usermail");
-  var enviar= document.getElementById('enviarme');
-  enviar.setAttribute("href", "mailto:"+ usermail +"?Subject=Mis%20Vacunas");
-}
+// function enviarme(){
+//   var usermail = sessionStorage.getItem("usermail");
+//   var enviar= document.getElementById('enviarme');
+//   enviar.setAttribute("href", "mailto:"+ usermail +"?Subject=Mis%20Vacunas&body=Primeras%20horas%0D%0ABCG%20es%20con%20B."");
+// }
 
 
 function toggleSignIn() {
@@ -301,6 +301,12 @@ function crearDin(w, x, y, z){
   ul.appendChild(li2);
 }
 
+function enviarme(){
+  var usermail = sessionStorage.getItem("usermail");
+  var enviar= document.getElementById('enviarme');
+  enviar.setAttribute("href", "mailto:"+ usermail +"?Subject=Mis%20Vacunas&body=Primeras%20horas%0D%0A"+nombre+"%0D%0A"+fecha+"%20"+lugar);
+}
+
   function VolcarDatos(x, y) {
     var usermail = sessionStorage.getItem("usermail");
     return output =
@@ -314,6 +320,8 @@ function crearDin(w, x, y, z){
                 var fecha = objeto.fecha;
                 var nombre = objeto.nombre;
                 crearDin(nombre, y, lugar, fecha);
+                enviarme();
+                
             });
         })
         .catch(function(error) {
