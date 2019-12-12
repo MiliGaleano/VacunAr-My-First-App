@@ -25,10 +25,6 @@ function onError(error) {
 
 navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
-//https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-geolocation/ documentacion
-
-
-
 
 var platform = new H.service.Platform({
   'apikey': 'ZN0DVG6NHOjgmKmIRqORIZtGGgQVHMdnSxqdBWX5_2A'

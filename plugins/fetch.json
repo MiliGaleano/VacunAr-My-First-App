@@ -23,14 +23,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-geolocation": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-geolocation@4.0.2"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-vibration": {
     "source": {
       "type": "registry",
@@ -51,6 +43,14 @@
     "source": {
       "type": "registry",
       "id": "cordova-plugin-camera@4.1.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-geolocation": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-geolocation@4.0.2"
     },
     "is_top_level": true,
     "variables": {}

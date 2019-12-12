@@ -4,8 +4,14 @@
   "name": "VacunAr",
   "short_name": "VacunAr",
   "version": "com.phonegap.helloworld",
-  "description": "A basic Framework7 template for PhoneGap.",
+  "description": "Llevá tu libreta de vacunación siempre con vos.",
   "author": "Apache Cordova Team",
-  "icons": [],
+  "icons": [
+    {
+      "src": "www/img/icono.png",
+      "type": "image/png",
+      "sizes": "undefinedxundefined"
+    }
+  ],
   "start_url": "index.html"
 }

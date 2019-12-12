@@ -22,7 +22,7 @@
     <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"
      type="text/javascript" charset="utf-8"></script>
     <!--estilos-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Mapa</title>
 </head>
 <body>
@@ -33,16 +33,13 @@
                                         <a class="btn btn-secondary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-bars"></i></a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                      <a class="dropdown-item" href="#" id="nombreUsuario">Maria Luz</a>
-                                      <a class="dropdown-item" href="login.html" onclick="cerrarSesion()">Cerrar sesión</a>
+                                       <a class="dropdown-item" href="login.html" onclick="cerrarSesion()">Cerrar sesión</a>
                                       <div class="dropdown-divider"></div>
-                                      <a class="dropdown-item" href="#">Consultas</a>
-                                      <div class="dropdown-divider"></div>
-                                      <a class="dropdown-item" href="#">Crear nuevo perfil</a>
-                                    </div>
+                                      <a class="dropdown-item" href="mailto:VacunAr@gmail.com?Subject=Consulta%20Vacunas" target="_top">Consultas</a>
+                                      </div>
                                   </div>
                                 <a class="nav-item nav-link active" href="#" id="calend">Centros de vacunación</a>
-                                <a class="nav-item nav-link" href="#"><i class="fas fa-share-alt"></i></a>
+                                <a class="nav-item nav-link" href="#"></a>
                         </div>
                     </nav>
         </header>
@@ -54,13 +51,12 @@
             <nav class="navbar fixed-bottom navbar-expand navbar-light bg-light" id="hola">
                 <div class="container d-flex p-2 bd-highlightcollapse navbar-collapse navbar-nav d-flex justify-content-around" style="background-color: #7596b6;" id="navbarNavAltMarkup">
                         <a class="nav-item nav-link" href="index.html"><i class="fas fa-syringe"></i></a>
-                        <a class="nav-item nav-link" href="calendario.html"><i class="fas fa-calendar-alt"></i></a>
                         <a class="nav-item nav-link" href="noticias.html"><i class="fas fa-bullhorn"></i></a>
                         <a class="nav-item nav-link active" href="#"><i class="fas fa-map-marked-alt"></i></a>
                 </div>
             </nav>
         </footer>
 
-<script src="scriptmapa.js"></script>        
+<script src="js/scriptmapa.js"></script>        
 </body>
 </html>

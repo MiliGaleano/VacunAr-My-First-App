@@ -238,12 +238,12 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "cordova-plugin-console": "1.0.7",
-    "cordova-plugin-geolocation": "4.0.2",
     "cordova-plugin-statusbar": "1.0.1",
     "cordova-plugin-vibration": "3.1.1",
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-file": "6.0.2",
-    "cordova-plugin-camera": "4.1.0"
+    "cordova-plugin-camera": "4.1.0",
+    "cordova-plugin-geolocation": "4.0.2"
 }
 // BOTTOM OF METADATA
 });
