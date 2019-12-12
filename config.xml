@@ -18,6 +18,25 @@
     <platform name="android">
         <preference name="android-minSdkVersion" value="14" />
         <allow-intent href="market:*" />
+        <preference name="SplashScreen" value="splash" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="FadeSplashScreen" value="false" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="SplashShowOnlyFirstTime" value="false" />
+    <preference name="SplashShowOnlyFirstTime" value="false" />
+    <splash qualifier="land-hdpi" src="res/drawable-land-hdpi/splash.png" />
+    <splash qualifier="land-ldpi" src="res/drawable-land-ldpi/splash.png" />
+    <splash qualifier="land-mdpi" src="res/drawable-land-mdpi/splash.png" />
+    <splash qualifier="land-xhdpi" src="res/drawable-land-xhdpi/splash.png" />
+    <splash qualifier="land-xxhdpi" src="res/drawable-land-xxhdpi/splash.png" />
+    <splash qualifier="land-xxxhdpi" src="res/drawable-land-xxxhdpi/splash.png" />
+    <splash qualifier="port-hdpi" src="res/drawable-port-hdpi/splash.png" />
+    <splash qualifier="port-ldpi" src="res/drawable-port-ldpi/splash.png" />
+    <splash qualifier="port-mdpi" src="res/drawable-port-mdpi/splash.png" />
+    <splash qualifier="port-xhdpi" src="res/drawable-port-xhdpi/splash.png" />
+    <splash qualifier="port-xxhdpi" src="res/drawable-port-xxhdpi/splash.png" />
+    <splash qualifier="port-xxxhdpi" src="res/drawable-port-xxxhdpi/splash.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -30,20 +49,4 @@
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
     <plugin name="cordova-plugin-geolocation" spec="2.4.3" />
     <icon src="www/img/icono.png" />
-<platform name="android">
-    <!-- you can use any density that exists in the Android project -->
-    <splash src="www/splash.png" density="land-hdpi"/>
-    <splash src="www/splash.png" density="land-ldpi"/>
-    <splash src="www/splash.png" density="land-mdpi"/>
-    <splash src="www/splash.png" density="land-xhdpi"/>
-    <splash src="www/splash.png" density="land-xxhdpi"/>
-
-    <splash src="www/splash.png" density="port-hdpi"/>
-    <splash src="www/splash.png" density="port-ldpi"/>
-    <splash src="www/splash.png" density="port-mdpi"/>
-    <splash src="www/splash.png" density="port-xhdpi"/>
-    <splash src="www/splash.png" density="port-xxhdpi"/>
-</platform>
-<preference name="SplashScreenDelay" value="3000" />
-<preference name="SplashScreen" value="screen" />
 </widget>
