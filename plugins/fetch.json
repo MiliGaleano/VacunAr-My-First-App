@@ -56,5 +56,13 @@
     "variables": {
       "GEOLOCATION_USAGE_DESCRIPTION": "To locate you"
     }
+  },
+  "cordova-plugin-splashscreen": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/apache/cordova-plugin-splashscreen.git"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

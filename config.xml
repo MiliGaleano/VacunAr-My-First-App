@@ -29,9 +29,23 @@
     <plugin name="cordova-plugin-console" spec="~1.0.1" />
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
     <plugin name="cordova-plugin-geolocation" spec="2.4.3" />
-    <plugin name="cordova-plugin-splashscreen" source="npm" />
     <icon src="www/img/icono.png" />
-    <splash src="www/splash.png" />
-    <preference name="SplashScreenDelay" value="5000"/>
-    <preference name="SplashScreen" value="splash" />
+<platform name="android">
+    <!-- you can use any density that exists in the Android project -->
+    <splash src="www/splash.png" density="land-hdpi"/>
+    <splash src="www/splash.png" density="land-ldpi"/>
+    <splash src="www/splash.png" density="land-mdpi"/>
+    <splash src="www/splash.png" density="land-xhdpi"/>
+    <splash src="www/splash.png" density="land-xxhdpi"/>
+
+    <splash src="www/splash.png" density="port-hdpi"/>
+    <splash src="www/splash.png" density="port-ldpi"/>
+    <splash src="www/splash.png" density="port-mdpi"/>
+    <splash src="www/splash.png" density="port-xhdpi"/>
+    <splash src="www/splash.png" density="port-xxhdpi"/>
+</platform>
+<preference name="SplashScreenDelay" value="10000" />
+<preference name="AutoHideSplashScreen" value="true" />
+
+
 </widget>
