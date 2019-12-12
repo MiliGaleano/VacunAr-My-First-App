@@ -33,4 +33,5 @@
     <icon src="www/img/icono.png" />
     <splash src="www/splash.png" />
     <preference name="SplashScreenDelay" value="5000"/>
+    <preference name="SplashScreen" value="splash" />
 </widget>
