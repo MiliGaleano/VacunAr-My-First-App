@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- iconos fontawesome -->
+    <script src="https://kit.fontawesome.com/675f0b7167.js" crossorigin="anonymous"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--estilos-->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Registro</title>
+</head>
+<body>
+
+</div>
+  <div>
+        <header>
+                <nav class="navbar fixed-top navbar-expand navbar-light bg-light" id="hola">
+                        <div class="container d-flex p-2 bd-highlightcollapse navbar-collapse navbar-nav d-flex justify-content-around" style="background-color: #7596b6;" id="navbarNavAltMarkup2">
+                                    <div>
+                                        <a class="btn btn-secondary" href="index.html" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-chevron-left"></i></i></a>
+                                  </div>   
+                            <a class="nav-item nav-link active" href="#" id="calend">Editar libreta</a>
+                            <a class="nav-item nav-link" href="#"></a>
+                        </div>
+                    </nav>
+        </header>
+
+      
+
+        <div id="cuerpo">
+
+                <div class="accordion" id="accordionVacunas">
+    
+                    <div class="card">
+                      <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                          <button class="btn btn-link collapsed" id="botonVacunas" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Primeras horas
+                          </button>
+                        </h2>
+                      </div>
+                  
+                      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionVacunas">
+                        <div class="card-body">
+                            <ul>
+                                <li id="nombrevacuna" title="BCG">BCG</li>
+                                <div id="datosBCG1">
+                                <form action="" onsubmit="">
+                                    <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaBCG1"/></label>
+                                    <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarBCG1"/>
+                                        <label for="Subir" id="iconoBoton" onclick="traerDatos(label[2].style, inputs[0].value, inputs[1].value, nombre[0].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                        </label>
+                                    </label>
+                                    
+                                </form>
+                                </div>
+
+                                <li id="nombrevacuna" title="HepatitisB">Hepatitis B HB</li>
+                                <div id="datosHB1">
+                                <form action="">
+                                    <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaHB1"/></label>
+                                    <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarHB1"/>
+                                      <label for="Subir" id="iconoBoton" onclick="traerDatos(label[5].style, inputs[3].value, inputs[4].value, nombre[1].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                      </label>
+                                    </label>
+                                </form>
+                                </div>
+                            </ul>
+                      </div>
+                    </div>
+                </div>
+    
+                    <div class="card">
+                      <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                          <button class="btn btn-link collapsed" id="botonVacunas" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            2 meses
+                          </button>
+                        </h2>
+                      </div>
+
+                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionVacunas">
+                        <div class="card-body">
+                            <ul>
+                                <li id="nombrevacuna" title="Neumococo">Neumococo Conjugada</li>
+                                <div id="datosNC2">
+                                <form action="">
+                                    <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaNC2"/></label>
+                                    <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarNC2"/>
+                                      <label for="Subir" id="iconoBoton" onclick="traerDatos(label[8].style, inputs[6].value, inputs[7].value, nombre[2].title, div[2])"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                      </label>
+                                    </label>
+                                </form>
+                                </div>
+                                <li id="nombrevacuna" title="QP">Quintuple Pentavalente DTP-HB-Hib</li>
+                                <div id="datosQP2" class="">
+                                <form action="">
+                                    <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaQP2"/></label>
+                                    <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarQP2"/>
+                                      <label for="Subir" id="iconoBoton" onclick="traerDatos(label[11].style, inputs[9].value, inputs[10].value, nombre[3].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                      </label>
+                                    </label>
+                                </form>    
+                                </div>
+                                <li id="nombrevacuna" title="Rota">Rotavirus</li>
+                                <div id="datosROTA2" class="">
+                                <form action="">
+                                    <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaROTA2"/></label>
+                                    <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarROTA2"/>
+                                      <label for="Subir" id="iconoBoton" onclick="traerDatos(label[14].style, inputs[12].value, inputs[13].value, nombre[4].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                      </label>
+                                    </label>
+                                </form>    
+                                </div>
+                                <li id="nombrevacuna" title="POLIO">Polio</li>
+                                <div id="datosPOLIO2" class="">
+                                <form action="">
+                                    <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaPOLIO2"/></label>
+                                    <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarPOLIO2"/>
+                                      <label for="Subir" id="iconoBoton" onclick="traerDatos(label[17].style, inputs[15].value, inputs[16].value, nombre[5].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                      </label>
+                                    </label>
+                                </form>
+                                </div>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+    
+                    <div class="card">
+                      <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                          <button class="btn btn-link collapsed" id="botonVacunas" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            3 meses
+                          </button>
+                        </h2>
+                      </div>
+                      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionVacunas">
+                        <div class="card-body">
+                            <ul>
+                                <li id="nombrevacuna" title="Meni">Meningococo</li>
+                                <div id="datosMENI3" class="">
+                                <form action="">
+                                    <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaMENI3"/></label>
+                                    <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarMENI3"/>
+                                      <label for="Subir" id="iconoBoton" onclick="traerDatos(label[20].style, inputs[18].value, inputs[19].value, nombre[6].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                      </label>
+                                    </label>
+                                </form>    
+                                </div>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+    
+                    <div class="card">
+                      <div class="card-header" id="headingFour">
+                          <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" id="botonVacunas" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                4 meses
+                            </button>
+                          </h2>
+                      </div>
+                        
+                       <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionVacunas">
+                          <div class="card-body">
+                            <ul>
+                                <li id="nombrevacuna" title="Neumococo2">Neumococo Conjugada</li>
+                                <div id="datosNC4" class="">
+                                <form action="">
+                                    <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaNC4"/></label>
+                                    <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarNC4"/>
+                                      <label for="Subir" id="iconoBoton" onclick="traerDatos(label[23].style, inputs[21].value, inputs[22].value, nombre[7].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                      </label>
+                                    </label>
+                                </form>
+                                </div>
+                                <li id="nombrevacuna" title="QP2">Quintuple Pentavalente DTP-HB-Hib</li>
+                                <div id="datosQP4" class="">
+                                <form action="">
+                                    <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaQP4"/></label>
+                                    <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarQP4"/>
+                                      <label for="Subir" id="iconoBoton" onclick="traerDatos(label[26].style, inputs[24].value, inputs[25].value, nombre[8].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                      </label>
+                                    </label>
+                                </form>
+                                </div>
+                                <li id="nombrevacuna" title="Rota2">Rotavirus</li>
+                                <div id="datosROTA4" class="">
+                                <form action="">
+                                    <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaROTA4"/></label>
+                                    <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarROTA4"/>
+                                      <label for="Subir" id="iconoBoton" onclick="traerDatos(label[29].style, inputs[27].value, inputs[28].value, nombre[9].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                      </label>
+                                    </label>
+                                </form>
+                                </div>
+                                <li id="nombrevacuna" title="Polio2">Polio</li>
+                                <div id="datosPOLIO4" class="">
+                                <form action="">
+                                    <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaPOLIO4"/></label>
+                                    <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarPOLIO4"/>
+                                      <label for="Subir" id="iconoBoton" onclick="traerDatos(label[32].style, inputs[30].value, inputs[31].value, nombre[10].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                      </label>
+                                    </label>
+                                </form>
+                                </div>
+                            </ul>
+                          </div>
+                       </div>
+                    </div>
+          
+                          <div class="card">
+                            <div class="card-header" id="headingFive">
+                              <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" id="botonVacunas" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                  5 meses
+                                </button>
+                              </h2>
+                            </div>
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionVacunas">
+                              <div class="card-body">
+                                    <ul>
+                                        <li id="nombrevacuna" title="Meni2">Meningococo</li>
+                                        <div id="datosMENI5" class="">
+                                        <form action="">
+                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaMENI5"/></label>
+                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarMENI5"/>
+                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[35].style, inputs[33].value, inputs[34].value, nombre[11].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                              </label>
+                                            </label>
+                                        </form>   
+                                        </div>
+                                    </ul>
+                              </div>
+                            </div>
+                          </div>
+          
+                          <div class="card">
+                            <div class="card-header" id="headingSix">
+                              <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" id="botonVacunas" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                  6 meses
+                                </button>
+                              </h2>
+                            </div>
+                            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionVacunas">
+                              <div class="card-body">
+                                    <ul>
+                                        <li id="nombrevacuna" title="QP3">Quintuple Pentavalente DTP-HB-Hib</li>
+                                        <div id="datosQP6" class="">
+                                        <form action="">
+                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaQP6"/></label>
+                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarQP6"/>
+                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[38].style, inputs[36].value, inputs[37].value, nombre[12].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                              </label>
+                                            </label>
+                                        </form>
+                                        </div>
+                                        <li id="nombrevacuna" title="Polio3">Polio</li>
+                                        <div id="datosPOLIO6" class="">
+                                        <form action="">
+                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaPOLIO6"/></label>
+                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarPOLIO6"/>
+                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[41].style, inputs[39].value, inputs[40].value, nombre[13].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                              </label>
+                                            </label>
+                                        </form>
+                                        </div>
+                                        <li id="nombrevacuna" title="Gripe">Gripe</li>
+                                        <div id="datosGRIPE6" class="">
+                                        <form action="">
+                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaGRIPE6"/></label>
+                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarGRIPE6"/>
+                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[44].style, inputs[42].value, inputs[43].value, nombre[14].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                              </label>
+                                            </label>
+                                        </form>
+                                        </div>
+                                    </ul>
+                              </div>
+                            </div>
+                          </div>
+    
+                          <div class="card">
+                                <div class="card-header" id="headingSeven">
+                                  <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" id="botonVacunas" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                      12 meses
+                                    </button>
+                                  </h2>
+                                </div>
+                            
+                                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionVacunas">
+                                  <div class="card-body">
+                                        <ul>
+                                            <li id="nombrevacuna" title="Neumococo3">Neumococo Conjugada</li>
+                                            <div id="datosNC7" class="">
+                                            <form action="">
+                                                <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaNC7"/></label>
+                                                <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarNC7"/>
+                                                  <label for="Subir" id="iconoBoton" onclick="traerDatos(label[47].style, inputs[45].value, inputs[46].value, nombre[15].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                  </label>
+                                                </label>
+                                            </form>
+                                            </div>
+                                            <li id="nombrevacuna" title="TV">Triple viral SRP</li>
+                                            <div id="datosTV7" class="">
+                                            <form action="">
+                                                <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaTV7"/></label>
+                                                <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarTV7"/>
+                                                  <label for="Subir" id="iconoBoton" onclick="traerDatos(label[50].style, inputs[48].value, inputs[49].value, nombre[16].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                  </label>
+                                                </label>
+                                            </form>
+                                            </div>
+                                            <li id="nombrevacuna" title="Gripe2">Gripe</li>
+                                            <div id="datosGRIPE7" class="">
+                                            <form action="">
+                                                <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaGRIPE7"/></label>
+                                                <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarGRIPE7"/>
+                                                  <label for="Subir" id="iconoBoton" onclick="traerDatos(label[53].style, inputs[51].value, inputs[52].value, nombre[17].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                  </label>
+                                                </label>
+                                            </form>
+                                            </div>
+                                            <li id="nombrevacuna" title="HepatitisA">Hepatitis A HA</li>
+                                            <div id="datosHA7" class="">
+                                            <form action="">
+                                                <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaHA7"/></label>
+                                                <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarHA7"/>
+                                                  <label for="Subir" id="iconoBoton" onclick="traerDatos(label[56].style, inputs[54].value, inputs[55].value, nombre[18].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                  </label>
+                                                </label>
+                                            </form>
+                                            </div>
+                                        </ul>
+                                  </div>
+                                </div>
+                              </div>
+              
+                              <div class="card">
+                                <div class="card-header" id="headingEight">
+                                  <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" id="botonVacunas" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                      15 meses
+                                    </button>
+                                  </h2>
+                                </div>
+                                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionVacunas">
+                                  <div class="card-body">
+                                        <ul>
+                                            <li id="nombrevacuna" title="Meni3">Meningococo</li>
+                                            <div id="datosMENI8" class="">
+                                            <form action="">
+                                                <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaMENI8"/></label>
+                                                <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarMENI8"/>
+                                                  <label for="Subir" id="iconoBoton" onclick="traerDatos(label[59].style, inputs[57].value, inputs[58].value, nombre[19].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                  </label>
+                                                </label>
+                                            </form>
+                                            </div>
+                                            <li id="nombrevacuna" title="Gripe3">Gripe</li>
+                                            <div id="datosGRIPE8" class="">
+                                            <form action="">
+                                                <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaGRIPE8"/></label>
+                                                <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarGRIPE8"/>
+                                                  <label for="Subir" id="iconoBoton" onclick="traerDatos(label[62].style, inputs[60].value, inputs[61].value, nombre[20].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                  </label>
+                                                </label>
+                                            </form>
+                                            </div>
+                                            <li id="nombrevacuna" title="Varicela">Varicela</li>
+                                            <div id="datosVARI8" class="">
+                                            <form action="">
+                                                <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaVARI8"/></label>
+                                                <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarVARI8"/>
+                                                  <label for="Subir" id="iconoBoton" onclick="traerDatos(label[65].style, inputs[63].value, inputs[64].value, nombre[21].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                  </label>
+                                                </label>
+                                            </form>
+                                            </div>
+                                        </ul>
+                                  </div>
+                                </div>
+                              </div>
+              
+                              <div class="card">
+                                <div class="card-header" id="headingNine">
+                                  <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" id="botonVacunas" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                      15-18 meses
+                                    </button>
+                                  </h2>
+                                </div>
+                                <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionVacunas">
+                                  <div class="card-body">
+                                        <ul>
+                                            <li id="nombrevacuna" title="CoQP">Cuádruple o Quintuple Pentavalente</li>
+                                            <div id="datosQP9" class="">
+                                            <form action="">
+                                                <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaQP9"/></label>
+                                                <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarQP9"/>
+                                                  <label for="Subir" id="iconoBoton" onclick="traerDatos(label[68].style, inputs[66].value, inputs[67].value, nombre[22].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                  </label>
+                                                </label>
+                                            </form>
+                                            </div>
+                                            <li id="nombrevacuna" title="Polio4">Polio</li>
+                                            <div id="datosPOLIO9" class="">
+                                            <form action="">
+                                                <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaPOLIO9"/></label>
+                                                <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarPOLIO9"/>
+                                                  <label for="Subir" id="iconoBoton" onclick="traerDatos(label[71].style, inputs[69].value, inputs[70].value, nombre[23].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                  </label>
+                                                </label>
+                                            </form>
+                                            </div>
+                                            <li id="nombrevacuna" title="Gripe4">Gripe</li>
+                                            <div id="datosGRIPE9" class="">
+                                            <form action="">
+                                                <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaGRIPE9"/></label>
+                                                <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarGRIPE9"/>
+                                                  <label for="Subir" id="iconoBoton" onclick="traerDatos(label[74].style, inputs[72].value, inputs[73].value, nombre[24].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                  </label>
+                                                </label>
+                                            </form>
+                                            </div>
+                                        </ul>
+                                  </div>
+                                </div>
+                              </div>
+    
+                              <div class="card">
+                                      <div class="card-header" id="headingTen">
+                                        <h2 class="mb-0">
+                                          <button class="btn btn-link collapsed" id="botonVacunas" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                              18 meses
+                                          </button>
+                                        </h2>
+                                      </div>
+                                  
+                                      <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionVacunas">
+                                        <div class="card-body">
+                                                <ul>
+                                                    <li id="nombrevacuna" title="Gripe5">Gripe</li>
+                                                    <div id="datosGRIPE10" class="">
+                                                    <form action="">
+                                                        <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaGRIPE10"/></label>
+                                                        <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarGRIPE10"/>
+                                                          <label for="Subir" id="iconoBoton" onclick="traerDatos(label[77].style, inputs[75].value, inputs[76].value, nombre[25].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                          </label>
+                                                        </label>
+                                                    </form>
+                                                    </div>
+                                                    <li id="nombrevacuna" title="FA">Fiebre Amarilla FA</li>
+                                                    <div id="datosFA10" class="">
+                                                    <form action="">
+                                                        <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaFA10"/></label>
+                                                        <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarFA10"/>
+                                                          <label for="Subir" id="iconoBoton" onclick="traerDatos(label[80].style, inputs[78].value, inputs[79].value, nombre[26].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                          </label>
+                                                        </label>
+                                                    </form>
+                                                    </div>
+                                                </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                    
+                                    <div class="card">
+                                      <div class="card-header" id="headingEleven">
+                                        <h2 class="mb-0">
+                                          <button class="btn btn-link collapsed" id="botonVacunas" type="button" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                                            24 meses
+                                          </button>
+                                        </h2>
+                                      </div>
+                                      <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-parent="#accordionVacunas">
+                                        <div class="card-body">
+                                                <ul>
+                                                    <li id="nombrevacuna" title="Gripe6">Gripe</li>
+                                                    <div id="datosGRIPE11" class="">
+                                                    <form action="">
+                                                        <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaGRIPE11"/></label>
+                                                        <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarGRIPE11"/>
+                                                          <label for="Subir" id="iconoBoton" onclick="traerDatos(label[83].style, inputs[81].value, inputs[82].value, nombre[27].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                          </label>
+                                                        </label>
+                                                    </form>
+                                                    </div>
+                                                </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                    
+                                    <div class="card">
+                                      <div class="card-header" id="headingTwelf">
+                                        <h2 class="mb-0">
+                                          <button class="btn btn-link collapsed" id="botonVacunas" type="button" data-toggle="collapse" data-target="#collapseTwelf" aria-expanded="false" aria-controls="collapseTwelf">
+                                            6 años
+                                          </button>
+                                        </h2>
+                                      </div>
+                                      <div id="collapseTwelf" class="collapse" aria-labelledby="headingTwelf" data-parent="#accordionVacunas">
+                                        <div class="card-body">
+                                                <ul>
+                                                    <li id="nombrevacuna" title="Polio5">Polio</li>
+                                                    <div id="datosPOLIO12" class="">
+                                                    <form action="">
+                                                        <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaPOLIO12"/></label>
+                                                        <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarPOLIO12"/>
+                                                          <label for="Subir" id="iconoBoton" onclick="traerDatos(label[86].style, inputs[84].value, inputs[85].value, nombre[28].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                          </label>
+                                                        </label>
+                                                    </form>
+                                                    </div>
+                                                    <li id="nombrevacuna" title="TVSRP">Triple viral SRP</li>
+                                                    <div id="datosTV12" class="">
+                                                    <form action="">
+                                                        <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaTV12"/></label>
+                                                        <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarTV12"/>
+                                                          <label for="Subir" id="iconoBoton" onclick="traerDatos(label[89].style, inputs[87].value, inputs[88].value, nombre[29].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                          </label>
+                                                        </label>
+                                                    </form>
+                                                    </div>
+                                                    <li id="nombrevacuna" title="TB">Triple Bacteriana Celular DTP</li>
+                                                    <div id="datosTBC12" class="">
+                                                    <form action="">
+                                                        <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaTBC12"/></label>
+                                                        <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarTBC12"/>
+                                                          <label for="Subir" id="iconoBoton" onclick="traerDatos(label[92].style, inputs[90].value, inputs[91].value, nombre[30].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                          </label>
+                                                        </label>
+                                                    </form>
+                                                    </div>
+                                                </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+    
+                                    <div class="card">
+                                            <div class="card-header" id="headingThirteen">
+                                              <h2 class="mb-0">
+                                                <button class="btn btn-link collapsed" id="botonVacunas" type="button" data-toggle="collapse" data-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                                                  11 años
+                                                </button>
+                                              </h2>
+                                            </div>
+                                            <div id="collapseThirteen" class="collapse" aria-labelledby="headingThirteen" data-parent="#accordionVacunas">
+                                              <div class="card-body">
+                                                    <ul>
+                                                        <li id="nombrevacuna" title="Meni4">Meningococo</li>
+                                                        <div id="datosMENI13" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaMENI13"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarMENI13"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[95].style, inputs[93].value, inputs[94].value, nombre[31].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div>
+                                                        <li id="nombrevacuna" title="HepatitisB2">Hepatitis B HB</li>
+                                                        <div id="datosHB13" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaHB13"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarHB13"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[98].style, inputs[96].value, inputs[97].value, nombre[32].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div>
+                                                        <li id="nombrevacuna" title="TVSRP2">Triple viral SRP</li>
+                                                        <div id="datosTV13" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaTV13"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarTV13"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[101].style, inputs[99].value, inputs[100].value, nombre[33].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div>
+                                                        <li id="nombrevacuna" title="TB2">Triple Bacteriana Acelular dTpa</li>
+                                                        <div id="datosTB13" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaTB13"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarTB13"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[104].style, inputs[102].value, inputs[103].value, nombre[34].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div>
+                                                        <li id="nombrevacuna" title="VPH">Virus Papiloma Humano VPH</li>
+                                                        <div id="datosVPH13" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaVPH13"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarVPH13"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[107].style, inputs[105].value, inputs[106].value, nombre[35].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div>
+                                                        <li id="nombrevacuna" title="FA2">Fiebre Amarilla FA</li>
+                                                        <div id="datosFA13" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaFA13"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarFA13"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[110].style, inputs[108].value, inputs[109].value, nombre[36].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div>
+                                                    </ul>
+                                              </div>
+                                            </div>
+                                    </div>
+    
+                                    <div class="card">
+                                            <div class="card-header" id="headingFourteen">
+                                              <h2 class="mb-0">
+                                                <button class="btn btn-link collapsed" id="botonVacunas" type="button" data-toggle="collapse" data-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+                                                    16 años
+                                                </button>
+                                              </h2>
+                                            </div>
+                                        
+                                            <div id="collapseFourteen" class="collapse" aria-labelledby="headingFourteen" data-parent="#accordionVacunas">
+                                              <div class="card-body">
+                                                    <ul>
+                                                        <li id="nombrevacuna" title="HepatitisB3">Hepatitis B HB</li>
+                                                        <div id="datosHB14" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaHB14"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarHB14"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[113].style, inputs[111].value, inputs[112].value, nombre[37].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div> 
+                                                        <li id="nombrevacuna" title="TVSRP3">Triple viral SRP</li>
+                                                        <div id="datosTV14" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaTV14"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarTV14"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[116].style, inputs[114].value, inputs[115].value, nombre[38].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div>
+                                                        <li id="nombrevacuna" title="DV">Doble Viral SR</li>
+                                                        <div id="datosDV14" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaDV14"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarDV14"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[119].style, inputs[117].value, inputs[118].value, nombre[39].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div>
+                                                        <li id="nombrevacuna" title="FHA">Fiebre Hemorrágica Argentina FHA</li>
+                                                        <div id="datosFHA14" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaFHA14"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarFHA14"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[122].style, inputs[120].value, inputs[121].value, nombre[40].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div>
+                                                    </ul>
+                                              </div>
+                                            </div>
+                                          </div>
+                          
+                                          <div class="card">
+                                            <div class="card-header" id="headingFifteen">
+                                              <h2 class="mb-0">
+                                                <button class="btn btn-link collapsed" id="botonVacunas" type="button" data-toggle="collapse" data-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                                                  Adultos
+                                                </button>
+                                              </h2>
+                                            </div>
+                                            <div id="collapseFifteen" class="collapse" aria-labelledby="headingFifteen" data-parent="#accordionVacunas">
+                                              <div class="card-body">
+                                                    <ul>
+                                                        <li id="nombrevacuna" title="HepatitisB4">Hepatitis B HB</li>
+                                                        <div id="datosHB15" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaHB15"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarHB15"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[125].style, inputs[123].value, inputs[124].value, nombre[41].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div> 
+                                                        <li id="nombrevacuna" title="TVSRP4">Triple viral SRP</li>
+                                                        <div id="datosTV15" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaTV15"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarTV15"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[128].style, inputs[126].value, inputs[127].value, nombre[42].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div>
+                                                        <li id="nombrevacuna" title="DB">Doble Bacteriana dT</li>
+                                                        <div id="datosDB15" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaDB15"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarDB15"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[131].style, inputs[129].value, inputs[130].value, nombre[43].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div>
+                                                        <li id="nombrevacuna" title="DV2">Doble Viral SR</li>
+                                                        <div id="datosDV15" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaDV15"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarDV15"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[134].style, inputs[132].value, inputs[133].value, nombre[44].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div>
+                                                        <li id="nombrevacuna" title="FHA2">Fiebre Hemorrágica Argentina FHA</li>
+                                                        <div id="datosFHA15" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaFHA15"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarFHA15"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[137].style, inputs[135].value, inputs[136].value, nombre[45].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div>
+                                                    </ul>
+                                              </div>
+                                            </div>
+                                          </div>
+                          
+                                          <div class="card">
+                                            <div class="card-header" id="headingSixteen">
+                                              <h2 class="mb-0">
+                                                <button class="btn btn-link collapsed" id="botonVacunas" type="button" data-toggle="collapse" data-target="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
+                                                  Embarazadas
+                                                </button>
+                                              </h2>
+                                            </div>
+                                            <div id="collapseSixteen" class="collapse" aria-labelledby="headingSixteen" data-parent="#accordionVacunas">
+                                              <div class="card-body">
+                                                    <ul>
+                                                        <li id="nombrevacuna" title="HepatitisB5">Hepatitis B HB</li>
+                                                        <div id="datosHB16" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaHB16"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarHB16"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[140].style, inputs[138].value, inputs[139].value, nombre[46].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div> 
+                                                        <li id="nombrevacuna" title="TBA">Triple Bacteriana Acelular dTpa</li>
+                                                        <div id="datosTB16" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaTB16"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarTB16"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[143].style, inputs[141].value, inputs[142].value, nombre[47].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div>
+                                                        <li id="nombrevacuna" title="Gripe7">Gripe</li>
+                                                        <div id="datosGRIPE16" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaGRIPE16"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarGRIPE16"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[146].style, inputs[144].value, inputs[145].value, nombre[48].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div>
+                                                    </ul>
+                                              </div>
+                                            </div>
+                                          </div>
+          
+                                          <div class="card">
+                                            <div class="card-header" id="headingSeventeen">
+                                                <h2 class="mb-0">
+                                                    <button class="btn btn-link collapsed" id="botonVacunas" type="button" data-toggle="collapse" data-target="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">
+                                                        Puerperio
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <div id="collapseSeventeen" class="collapse" aria-labelledby="headingSeventeen" data-parent="#accordionVacunas">
+                                                <div class="card-body">
+                                                    <ul>
+                                                        <li id="nombrevacuna" title="HepatitisB6">Hepatitis B HB</li>
+                                                        <div id="datosHB17" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaHB17"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarHB17"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[149].style, inputs[147].value, inputs[148].value, nombre[49].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div> 
+                                                        <li id="nombrevacuna" title="Gripe8">Gripe</li>
+                                                        <div id="datosGRIPE17" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaGRIPE17"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarGRIPE17"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[152].style, inputs[150].value, inputs[151].value, nombre[50].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div>
+                                                        <li id="nombrevacuna" title="TVSRP5">Triple viral SRP</li>
+                                                        <div id="datosTV17" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaTV17"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarTV17"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[155].style, inputs[153].value, inputs[154].value, nombre[51].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div>
+                                                        <li id="nombrevacuna" title="DV3">Doble Viral SR</li>
+                                                        <div id="datosDV17" class="">
+                                                        <form action="">
+                                                            <label for="Fecha">Fecha:<input type="date" name="Fecha" id="fechaDV17"/></label>
+                                                            <label for="Lugar">Lugar:<input type="text" name="Lugar" id="lugarDV17"/>
+                                                              <label for="Subir" id="iconoBoton" onclick="traerDatos(label[158].style, inputs[156].value, inputs[157].value, nombre[52].title)"><i class="fas fa-check"></i><input type="button" name="Subir" id="btnBCG1"/>
+                                                              </label>
+                                                            </label>
+                                                        </form>
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                          </div>
+                </div>
+            </div>
+
+        <footer>
+                <nav class="navbar fixed-bottom navbar-expand navbar-light bg-light" id="hola">
+                    <div class="container d-flex p-2 bd-highlightcollapse navbar-collapse navbar-nav d-flex justify-content-around" style="background-color: #7596b6;" id="navbarNavAltMarkup">
+                            <a class="nav-item nav-link" href="index.html"><i class="fas fa-syringe"></i></a>
+                             <a class="nav-item nav-link" href="noticias.html"><i class="fas fa-bullhorn"></i></a>
+                            <a class="nav-item nav-link" href="mapa.html"><i class="fas fa-map-marked-alt"></i></a>
+                    </div>
+                </nav>
+            </footer>
+          </div>
+
+<!-- firebase -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-storage.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-firestore.js"></script>
+    
+<script src="js/firebase.js"></script>
+
+</body>
+</html>
